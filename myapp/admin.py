@@ -8,6 +8,6 @@ admin.site.register(Contact)
 
 
 
-admin.site.site_header = 'BLOGSPOT | ADMIN PANEL'
-admin.site.site_title = 'BLOGSPOT | BLOGGING WEBSITE'
-admin.site.index_title= 'BlogSpot Site Administration'
+admin.site.site_header = 'OLENAKHANDII | ADMIN PANEL'
+admin.site.site_title = 'OLENAKHANDII | BLOGGING WEBSITE'
+admin.site.index_title= 'OLENAKHANDII Site Administration'
