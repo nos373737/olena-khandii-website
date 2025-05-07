@@ -1,0 +1,190 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="TemplateMo">
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+    rel="stylesheet">
+
+  <title>Blogs</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+
+
+</head>
+
+<body>
+
+  {%include 'header.html'%}
+
+  <!-- About my services content part -->
+  <div class="container mt-5">
+    <div class="row align-items-center">
+      <!-- Image Section -->
+      <div class="col-lg-6 col-md-12 mb-4">
+        <img src="{% static 'assets/images/my-image-01.jpg' %}" alt="myimage01" class="img-fluid rounded shadow">
+      </div>
+      <!-- Text Section -->
+      <div class="col-lg-6 col-md-12">
+        <div class="content">
+          <h4 class="mb-3">General English</h4>
+          <p><strong>Які рівні?</strong> A1-C2</p>
+          <p><strong>Яка ваша мета?</strong></p>
+          <ul>
+            <li>Довгострокова: ви хочете вчити англійську, щоб могти говорити в різних ситуаціях:</li>
+            <ul>
+              <li>В подорожах</li>
+              <li>В навчанні</li>
+              <li>На роботі</li>
+            </ul>
+          </ul>
+          <p><strong>Який результат?</strong></p>
+          <ul>
+            <li>Розширюєте словниковий запас на загальні теми (чим вище рівень, тим абстрактніші теми)</li>
+            <li>Підтягуєте граматику</li>
+            <li>Долаєте свій страх говоріння</li>
+            <li>Починаєте або впевненіше використовуєте автентику типу книги, серіали і т.д.</li>
+          </ul>
+          <p><strong>Який формат?</strong></p>
+          <ul>
+            <li>Індивідуальні / парні / групові</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row align-items-center">
+      <!-- Text Section -->
+      <div class="col-lg-6 col-md-12">
+        <div class="content">
+          <h4 class="mb-3">Підготовка до ІСПИТІВ</h4>
+          <p><strong>Спеціалізація:</strong> IELTS, PTE, CELPIP, НМТ, ЄВІ</p>
+          <p><strong>Які рівні?</strong> Ви повинні знати бал, на який розраховуєте. Якщо ваша англійська не відповідає цьому рівню, спочатку працюємо над <em>General English</em>, а потім переходимо до підготовки до іспиту.</p>
+          <p><strong>Яка мета?</strong></p>
+          <ul>
+            <li>Вступ до університету за кордоном</li>
+            <li>Переїзд за кордон</li>
+            <li>Пошук роботи за кордоном</li>
+          </ul>
+          <p>На підготовку до іспиту ви приходите, коли точно знаєте:</p>
+          <ul>
+            <li>Який іспит потрібно скласти</li>
+            <li>Коли саме його потрібно скласти</li>
+          </ul>
+          <p><strong>Скільки часу потрібно?</strong> Це дуже індивідуально. Але точно не тиждень і не рік :)</p>
+        </div>
+      </div>
+      <!-- Image Section -->
+      <div class="col-lg-6 col-md-12 mb-4">
+        <img src="{% static 'assets/images/my-image-03.jpg' %}" alt="Exam Preparation" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row align-items-center">
+      <!-- Image Section -->
+      <div class="col-lg-6 col-md-12 mb-4">
+        <img src="{% static 'assets/images/my-image-02.jpg' %}" alt="Interview Preparation" class="img-fluid rounded shadow">
+      </div>
+      <!-- Text Section -->
+      <div class="col-lg-6 col-md-12">
+        <div class="content">
+            <h4 class="mb-3">Підготовка до співбесіди</h4>
+          <p>
+            <strong>*це не консультація HR, це робота з вашою англійською</strong><br> 
+          </p>
+          <p><strong>Які рівні?</strong> B1-C2</p>
+          <p><strong>Яка мета?</strong> впевнено відповідати на питання інтерв'юера англійською, рефлексія над власним ворк ікспіріенс</p>
+          <p><strong>Який результат?</strong> наявність у вашій голові чіткого уявлення щодо того, як відповідати на найтиповіші питання САМЕ щодо вашої вакансії.</p>
+          <p><strong>Скільки часу потрібно?</strong> дуже індивідуально, але в середньому від 2 до 5 занять</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="container mt-5">
+    <div class="row align-items-center">
+      <!-- Text Section -->
+      <div class="col-lg-6 col-md-12">
+        <div class="content">
+          <h4 class="mb-3">Business English</h4>
+          <p><strong>Які рівні:</strong> C1</p>
+          <p><strong>Яка ваша мета?</strong></p>
+          <ul>
+            <li>Ви вже або найближчим часом будете говорити англійською НА РОБОТІ.</li>
+            <li>Відчуваєте, що загалом для життя вам англійської вистачає, але для участі в робочих мітінгах, колах, презентаціях і т.д. — ні.</li>
+          </ul>
+          <p><strong>Про курс:</strong> Цей курс доволі обширний і не спрямований на працівників конкретної сфери.</p>
+          <p><strong>Який результат? </strong></p>
+          <ul>
+            <li>розширюєте словниковий запас на робочі теми (по ходу, ви вивчите і багато лексики конкретно під вашу професію)</li>
+            <li>підтягуєте граматику</li>
+            <li>впевнено і ефективно комунікуєте в роботі, в т.ч. можете писати, виступати на презентаціях, проходити співбесіди і т.д.</li>
+            <li>що дозволить вам в перспективі розраховувати на підвищення, бо чим краще ви комунікуєте, тим кращі результати роботи</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Image Section -->
+      <div class="col-lg-6 col-md-12 mb-4">
+        <img src="{% static 'assets/images/my-image-04.jpg' %}" alt="Business English" class="img-fluid rounded shadow">
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  {% include 'footer.html' %}
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+    crossorigin="anonymous"></script>
+
+  <!-- Additional Scripts -->
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+  <script src="{% static 'assets/js/owl.js' %}"></script>
+  <script src="{% static 'assets/js/slick.js' %}"></script>
+  <script src="{% static 'assets/js/isotope.js' %}"></script>
+  <script src="{% static 'assets/js/accordions.js' %}"></script>
+
+  <script language="text/Javascript">
+    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+    function clearField(t) {                   //declaring the array outside of the
+      if (!cleared[t.id]) {                      // function makes it static and global
+        cleared[t.id] = 1;  // you could use true and false, but that's more typing
+        t.value = '';         // with more chance of typos
+        t.style.color = '#fff';
+      }
+    }
+  </script>
+
+</body>
+
+</html>

@@ -46,7 +46,7 @@
 
     .btn:hover {
       background: transparent;
-      color: rgb(237, 63, 63);
+      color: rgb(31, 63, 244);
       border: 1px solid rgb(237, 63, 63);
     }
 
@@ -56,7 +56,7 @@
     }
 
     a:hover {
-      color: rgb(237, 63, 63);
+      color: rgb(31, 63, 244);
       letter-spacing: 1px;
     }
 
@@ -75,7 +75,7 @@
     <nav class="navbar navbar-expand-lg bg-white">
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <h2>OLENA<span style="color: orangered;">KHANDII</span></h2>
+          <h2>OLENA<span style="color: rgb(14, 10, 243);">KHANDII</span></h2>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
           aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -128,8 +128,14 @@
         </div>
         <label for="" class="form-label">Content</label>
         <textarea class="form-control" name="content" required>{{post.content}}</textarea>
-        <label for="" class="form-label">Category</label>
-        <input type="text" class="form-control" name="category" value="{{post.category}}" required>
+        <label for="category" class="form-label">Category</label>
+        <select class="form-control" name="category" required>
+          {% for category in categories %}
+          <option value="{{ category.id }}" {% if category.id == post.category.id %}selected{% endif %}>
+              {{ category.name }}
+          </option>
+          {% endfor %}
+        </select>
         <button class="btn">Update Post</button>
         <br>
         {% for message in messages %}

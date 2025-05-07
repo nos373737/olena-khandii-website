@@ -73,14 +73,16 @@ def create(request):
         try:
             postname = request.POST['postname']
             content = request.POST['content']
-            category = request.POST['category']
-            image = request.FILES['image']
-            Post(postname=postname,content=content,category=category,image=image,user=request.user).save()
-        except:
-            print("Error")
+            category_id = request.POST['category']
+            category = Category.objects.get(id=category_id)
+            image = request.FILES.get('image')
+            Post(postname=postname, content=content, category=category, image=image, user=request.user).save()
+        except Exception as e:
+            print(f"Error: {e}")
         return redirect('index')
     else:
-        return render(request,"create.html")
+        categories = Category.objects.all()
+        return render(request, "create.html", {"categories": categories})
     
 def profile(request,id):
     
@@ -140,24 +142,27 @@ def deletecomment(request,id):
     comment.delete()
     return post(request,postid)
     
-def editpost(request,id):
+def editpost(request, id):
     post = Post.objects.get(id=id)
     if request.method == 'POST':
         try:
             postname = request.POST['postname']
             content = request.POST['content']
-            category = request.POST['category']
+            category_id = request.POST['category']
+            category = Category.objects.get(id=category_id)  # Fetch the Category object
             
             post.postname = postname
             post.content = content
-            post.category = category
+            post.category = category  # Assign the Category object
             post.save()
-        except:
-            print("Error")
-        return profile(request,request.user.id)
+        except Exception as e:
+            print(f"Error: {e}")
+        return profile(request, request.user.id)
     
-    return render(request,"postedit.html",{
-        'post':post
+    categories = Category.objects.all()  # Fetch all categories for the dropdown
+    return render(request, "postedit.html", {
+        'post': post,
+        'categories': categories
     })
     
 def deletepost(request,id):
@@ -178,3 +183,9 @@ def contact_us(request):
         context['message']=f"Dear {name}, Thanks for your time!"
 
     return render(request,"contact.html")
+
+def booking(request):
+    return render(request,"calendar_integration.html",{})
+
+def services(request):
+    return render(request,"services.html",{})

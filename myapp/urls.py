@@ -17,4 +17,6 @@ urlpatterns = [
     path("post/edit/<int:id>",views.editpost,name="editpost"),
     path("post/delete/<int:id>",views.deletepost,name="deletepost"),
     path("contact",views.contact_us,name="contact"),
+    path("booking",views.booking,name="booking"),
+    path("services",views.services,name="services"),
 ]

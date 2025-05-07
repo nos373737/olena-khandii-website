@@ -1,24 +1,46 @@
 
 <style>
-  h4 {
-    text-align: left;
-    color: #dfdada;
-    letter-spacing: 1px;
-    margin-bottom: 20px;
-    font-size: 20px;
+  footer h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
   }
 
-  li {
-    text-decoration: none;
-    text-align: left;
+  footer ul li a {
+    color: #b3b3b3;
+    transition: color 0.3s ease;
   }
 
-  li a {
-    color: rgb(153, 147, 147);
+  footer ul li a:hover {
+    color: #ffffff;
+    text-decoration: underline;
   }
 
-  li a:hover {
-    color: orange;
+  footer p {
+    font-size: 14px;
+    color: #b3b3b3;
+  }
+
+  /* Ensure list items are visible */
+  ul.list-unstyled li {
+    margin-bottom: 10px; /* Add spacing between list items */
+  }
+
+  ul.list-unstyled li a {
+    color: #b3b3b3; /* Ensure the text color contrasts with the background */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease; /* Add hover effect */
+  }
+
+  ul.list-unstyled li a:hover {
+    color: #ffffff; /* Change color on hover for better visibility */
+    text-decoration: underline; /* Optional: Add underline on hover */
+  }
+
+  /* Adjust padding for better spacing */
+  ul.list-unstyled {
+    padding-left: 0; /* Remove default padding */
+    margin-top: 10px; /* Add spacing above the list */
   }
 
   @media screen and (max-width:600px) {
@@ -30,48 +52,62 @@
   }
 </style>
 
-<footer>
+<footer class="bg-dark text-light py-5">
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h4 class="text-light">SERVICE</h4>
-        <ul>
-          <li><a href="#">Shipping & Returns</a></li>
-          <li><a href="#">Size Guide</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h4 class="text-light">ACCOUNT</h4>
-        <ul>
-          <li><a href="{% url 'signin' %}">Login</a></li>
-          <li><a href="{% url 'signup' %}">Signup</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h4 class="text-light">INFORMATION</h4>
-        <ul>
-          <li><a href="{% url 'blog' %}">Our Story</a></li>
-          <li><a href="#">Find a stocklist</a></li>
-        </ul>
-      </div>
-      <div class="col-lg-3 col-md-6 col-sm-12">
-        <h4 class="text-light">CONNECT</h4>
-        <ul>
-          <li><a href="https://www.linkedin.com/in/keerti-vishwkarma-8ba754243/">Facebook</a></li>
-          <li><a href="https://www.linkedin.com/in/keerti-vishwkarma-8ba754243/">Instagram</a></li>
+      <!-- Cooperation Steps -->
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+        <h4 class="text-light">Етапи співпраці</h4>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-unmuted">Оплата & Повернення</a></li>
+          <li><a href="#" class="text-unmuted">Детальна Інформація</a></li>
         </ul>
       </div>
 
+      <!-- Profile -->
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+        <h4 class="text-light">ПРОФІЛЬ</h4>
+        <ul class="list-unstyled">
+          <li><a href="{% url 'signin' %}" class="text-unmuted">Увійти</a></li>
+          <li><a href="{% url 'signup' %}" class="text-unmuted">Вийти</a></li>
+        </ul>
+      </div>
+
+      <!-- Information -->
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+        <h4 class="text-light">Інформація</h4>
+        <ul class="list-unstyled">
+          <li><a href="{% url 'blog' %}" class="text-unmuted">Мій Блог</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Links -->
+      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
+        <h4 class="text-light">Як мене знайти?</h4>
+        <ul class="list-unstyled">
+          <li><a href="https://www.instagram.com/olena_khandii" class="text-unmuted">Instagram</a></li>
+        </ul>
+      </div>
     </div>
   </div>
 
-  <div class="container mt-5">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="p-3">
-          <p>&copy; Всі права  захищені 2024<br>
+  <div class="container">
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <p class="mb-0">&copy; Всі права захищені 2025</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <a href="#" class="text-unmuted d-block mb-2">Договір публічної оферти</a>
+          <span class="text-unmuted">Політика конфіденційності</span>
         </div>
       </div>
     </div>
   </div>
+  
 </footer>

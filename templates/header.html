@@ -13,7 +13,7 @@
   <nav class="navbar navbar-expand-lg bg-white">
     <div class="container">
       <a class="navbar-brand" href="{% url 'index' %}">
-        <h2>OLENA<span style="color: rgb(241, 110, 70);">KHANDII</span></h2>
+        <h2>OLENA<span style="color: rgb(14, 10, 243);">KHANDII</span></h2>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,16 +22,35 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li>
-            <a class="nav-link" href="{% url 'index' %}">Головна
+            <a class="nav-link" href="{% url 'index' %}">Про мене
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'blog' %}">Blogs</a>
+            <a class="nav-link" href="{% url 'services' %}">Мої послуги</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+            <a class="nav-link" href="{% url 'blog' %}">Відгуки</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog' %}">Ціни</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'booking' %}">Запис на заняття і наявні місця</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'blog' %}">Блог</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Контакти</a>
+          </li>
+          
+
+
+
+
+
+
 
           {% if user.is_authenticated %}
           <li class="nav-item">
