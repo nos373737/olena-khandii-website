@@ -12,7 +12,7 @@
     href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
     rel="stylesheet">
 
-  <title>Blogs</title>
+  <title>Мої послуги</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -37,15 +37,16 @@
   <div class="container mt-5">
     <div class="row align-items-center">
       <!-- Image Section -->
-      <div class="col-lg-6 col-md-12 mb-4">
+      <div class="col-lg-6 col-md-12 mb-4 order-lg-1 order-2">
         <img src="{% static 'assets/images/my-image-01.jpg' %}" alt="myimage01" class="img-fluid rounded shadow">
       </div>
       <!-- Text Section -->
-      <div class="col-lg-6 col-md-12">
+      <div class="col-lg-6 col-md-12 order-lg-2 order-1">
         <div class="content">
-          <h4 class="mb-3">General English</h4>
-          <p><strong>Які рівні?</strong> A1-C2</p>
-          <p><strong>Яка ваша мета?</strong></p>
+          <h3 class="mb-3 text-primary">General English</h3>
+          <h4 class="mb-3">Які рівні?</h4>
+          <p>A1-C2</p>
+          <h4 class="mb-3">Яка ваша мета?</h4>
           <ul>
             <li>Довгострокова: ви хочете вчити англійську, щоб могти говорити в різних ситуаціях:</li>
             <ul>
@@ -54,14 +55,14 @@
               <li>На роботі</li>
             </ul>
           </ul>
-          <p><strong>Який результат?</strong></p>
+          <h4 class="mb-3">Який результат?</h4>
           <ul>
             <li>Розширюєте словниковий запас на загальні теми (чим вище рівень, тим абстрактніші теми)</li>
             <li>Підтягуєте граматику</li>
             <li>Долаєте свій страх говоріння</li>
             <li>Починаєте або впевненіше використовуєте автентику типу книги, серіали і т.д.</li>
           </ul>
-          <p><strong>Який формат?</strong></p>
+          <h4 class="mb-3">Який формат?</h4>
           <ul>
             <li>Індивідуальні / парні / групові</li>
           </ul>
@@ -69,91 +70,133 @@
       </div>
     </div>
   </div>
-
+  
   <div class="container mt-5">
     <div class="row align-items-center">
       <!-- Text Section -->
-      <div class="col-lg-6 col-md-12">
+      <div class="col-lg-6 col-md-12 order-lg-1 order-2">
         <div class="content">
-          <h4 class="mb-3">Підготовка до ІСПИТІВ</h4>
-          <p><strong>Спеціалізація:</strong> IELTS, PTE, CELPIP, НМТ, ЄВІ</p>
-          <p><strong>Які рівні?</strong> Ви повинні знати бал, на який розраховуєте. Якщо ваша англійська не відповідає цьому рівню, спочатку працюємо над <em>General English</em>, а потім переходимо до підготовки до іспиту.</p>
-          <p><strong>Яка мета?</strong></p>
+          <h3 class="mb-3 text-primary">Підготовка до ІСПИТІВ</h3>
+          <h4 class="mb-3">Спеціалізація:</h4>
+          <p>IELTS, PTE, CELPIP, НМТ, ЄВІ</p>
+          <h4 class="mb-3">Які рівні?</h4>
+          <p>Ви повинні знати бал, на який розраховуєте. Якщо ваша англійська не відповідає цьому рівню, спочатку працюємо над <em>General English</em>, а потім переходимо до підготовки до іспиту.</p>
+          <h4 class="mb-3">Яка мета?</h4>
           <ul>
             <li>Вступ до університету за кордоном</li>
             <li>Переїзд за кордон</li>
             <li>Пошук роботи за кордоном</li>
           </ul>
-          <p>На підготовку до іспиту ви приходите, коли точно знаєте:</p>
+          <h4 class="mb-3">Який результат?</h4>
           <ul>
-            <li>Який іспит потрібно скласти</li>
-            <li>Коли саме його потрібно скласти</li>
+            <li>Чітке розуміння структури іспиту</li>
+            <li>Покращення навичок читання, письма, слухання та говоріння</li>
           </ul>
-          <p><strong>Скільки часу потрібно?</strong> Це дуже індивідуально. Але точно не тиждень і не рік :)</p>
+          <h4 class="mb-3">Скільки часу потрібно?</h4>
+          <p>Це дуже індивідуально. Але точно не тиждень і не рік :)</p>
         </div>
       </div>
       <!-- Image Section -->
-      <div class="col-lg-6 col-md-12 mb-4">
+      <div class="col-lg-6 col-md-12 mb-4 order-lg-2 order-1">
         <img src="{% static 'assets/images/my-image-03.jpg' %}" alt="Exam Preparation" class="img-fluid rounded shadow">
       </div>
     </div>
   </div>
-
+  
   <div class="container mt-5">
     <div class="row align-items-center">
       <!-- Image Section -->
-      <div class="col-lg-6 col-md-12 mb-4">
+      <div class="col-lg-6 col-md-12 mb-4 order-lg-1 order-2">
         <img src="{% static 'assets/images/my-image-02.jpg' %}" alt="Interview Preparation" class="img-fluid rounded shadow">
       </div>
       <!-- Text Section -->
-      <div class="col-lg-6 col-md-12">
+      <div class="col-lg-6 col-md-12 order-lg-2 order-1">
         <div class="content">
-            <h4 class="mb-3">Підготовка до співбесіди</h4>
-          <p>
-            <strong>*це не консультація HR, це робота з вашою англійською</strong><br> 
-          </p>
-          <p><strong>Які рівні?</strong> B1-C2</p>
-          <p><strong>Яка мета?</strong> впевнено відповідати на питання інтерв'юера англійською, рефлексія над власним ворк ікспіріенс</p>
-          <p><strong>Який результат?</strong> наявність у вашій голові чіткого уявлення щодо того, як відповідати на найтиповіші питання САМЕ щодо вашої вакансії.</p>
-          <p><strong>Скільки часу потрібно?</strong> дуже індивідуально, але в середньому від 2 до 5 занять</p>
+          <h3 class="mb-3 text-primary">Підготовка до співбесіди</h3>
+          <h4 class="mb-3">Які рівні?</h4>
+          <p>B1-C2</p>
+          <h4 class="mb-3">Яка мета?</h4>
+          <ul>
+            <li>Впевнено відповідати на питання інтерв'юера англійською</li>
+            <li>Рефлексія над власним досвідом роботи</li>
+          </ul>
+          <h4 class="mb-3">Який результат?</h4>
+          <ul>
+            <li>Чітке уявлення щодо відповідей на типові питання</li>
+            <li>Покращення навичок самопрезентації</li>
+          </ul>
+          <h4 class="mb-3">Скільки часу потрібно?</h4>
+          <p>Дуже індивідуально, але в середньому від 2 до 5 занять</p>
         </div>
       </div>
-
     </div>
   </div>
-
+  
   <div class="container mt-5">
     <div class="row align-items-center">
       <!-- Text Section -->
-      <div class="col-lg-6 col-md-12">
+      <div class="col-lg-6 col-md-12 order-lg-1 order-2">
         <div class="content">
-          <h4 class="mb-3">Business English</h4>
-          <p><strong>Які рівні:</strong> C1</p>
-          <p><strong>Яка ваша мета?</strong></p>
+          <h3 class="mb-3 text-primary">Business English</h3>
+          <h4 class="mb-3">Які рівні?</h4>
+          <p>C1</p>
+          <h4 class="mb-3">Яка ваша мета?</h4>
           <ul>
-            <li>Ви вже або найближчим часом будете говорити англійською НА РОБОТІ.</li>
-            <li>Відчуваєте, що загалом для життя вам англійської вистачає, але для участі в робочих мітінгах, колах, презентаціях і т.д. — ні.</li>
+            <li>Ви вже або найближчим часом будете говорити англійською НА РОБОТІ</li>
+            <li>Відчуваєте, що загалом для життя вам англійської вистачає, але для участі в робочих мітінгах, колах, презентаціях і т.д. — ні</li>
           </ul>
-          <p><strong>Про курс:</strong> Цей курс доволі обширний і не спрямований на працівників конкретної сфери.</p>
-          <p><strong>Який результат? </strong></p>
+          <h4 class="mb-3">Про курс:</h4>
+          <p>Цей курс доволі обширний і не спрямований на працівників конкретної сфери.</p>
+          <h4 class="mb-3">Який результат?</h4>
           <ul>
-            <li>розширюєте словниковий запас на робочі теми (по ходу, ви вивчите і багато лексики конкретно під вашу професію)</li>
-            <li>підтягуєте граматику</li>
-            <li>впевнено і ефективно комунікуєте в роботі, в т.ч. можете писати, виступати на презентаціях, проходити співбесіди і т.д.</li>
-            <li>що дозволить вам в перспективі розраховувати на підвищення, бо чим краще ви комунікуєте, тим кращі результати роботи</li>
+            <li>Розширюєте словниковий запас на робочі теми</li>
+            <li>Підтягуєте граматику</li>
+            <li>Впевнено і ефективно комунікуєте в роботі</li>
           </ul>
         </div>
       </div>
       <!-- Image Section -->
-      <div class="col-lg-6 col-md-12 mb-4">
+      <div class="col-lg-6 col-md-12 mb-4 order-lg-2 order-1">
         <img src="{% static 'assets/images/my-image-04.jpg' %}" alt="Business English" class="img-fluid rounded shadow">
       </div>
     </div>
   </div>
-
-
-
-
+  
+  <div class="container mt-5">
+    <div class="row align-items-center">
+      <!-- Image Section -->
+      <div class="col-lg-6 col-md-12 mb-4 order-lg-1 order-2">
+        <img src="{% static 'assets/images/my-image-05.jpg' %}" alt="Asynchronous English Learning" class="img-fluid rounded shadow">
+      </div>
+      <!-- Text Section -->
+      <div class="col-lg-6 col-md-12 order-lg-2 order-1">
+        <div class="content">
+          <h3 class="mb-3 text-primary">Англійська в асинхронному форматі</h3>
+          <h4 class="mb-3">Які рівні?</h4>
+          <p>B2-C1</p>
+          <h4 class="mb-3">Яка ваша мета?</h4>
+          <ul>
+            <li>Точково попрацювати над конкретним запитом:</li>
+            <ul>
+              <li>Підготувати виступ / презентацію</li>
+              <li>Розширити словниковий запас на певну тему</li>
+              <li>Попрацювати над вашим Writing</li>
+            </ul>
+          </ul>
+          <h4 class="mb-3">Яка ваша проблема?</h4>
+          <ul>
+            <li>У вас немає стабільного часу для занять</li>
+          </ul>
+          <h4 class="mb-3">Як ми цю проблему вирішуємо?</h4>
+          <ul>
+            <li>Я надсилаю вам завдання і time frame для його виконання</li>
+            <li>Ви надсилаєте мені виконане завдання</li>
+            <li>Перевіряю, даю свій фідбек</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 
   {% include 'footer.html' %}
 
