@@ -1,9 +1,8 @@
 /staticfiles
 /.env
 /.venv
-/.venv/
-/.venv/bin
 /venv
 /*__pycache__/
 *.pyc
 *.pyo
+gunicorn.log

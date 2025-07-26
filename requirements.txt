@@ -3,3 +3,5 @@ django
 Pillow
 sqlparse
 tzdata
+gunicorn
+whitenoise

@@ -16,8 +16,10 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMP_DIR = os.path.join(BASE_DIR,"templates")
 STATIC_DIR = os.path.join(BASE_DIR,"static")
-# Define the STATIC_ROOT setting
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 MEDIA_DIR = os.path.join(BASE_DIR,"media")
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -44,6 +46,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
