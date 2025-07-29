@@ -25,6 +25,8 @@ runcmd:
   - [ nginx, -t ]
   - [ systemctl, restart, nginx ]
   - [ certbot, --nginx, -d, olenakhandii.com, -d, www.olenakhandii.com, --non-interactive, --agree-tos, -m, nosandriy@gmail.com ]
+  - [ nginx, -t ]
+  - [ systemctl, restart, nginx ]
   - [ cd, "/opt/website" ]
   - [ python3, -m, venv, venv ]
   - [ ., venv/bin/activate ]
