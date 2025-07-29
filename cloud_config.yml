@@ -1,0 +1,32 @@
+#cloud-config
+
+packages:
+  - python3
+  - python3-pip
+  - python3-venv
+  - git
+  - ufw
+  - nginx
+  - certbot
+  - python3-certbot-nginx
+
+runcmd:
+  - [ git, clone, "https://github.com/nos373737/olena-khandii-website.git", "/opt/website" ]
+  - [ cp, /opt/website/nginx.conf, /etc/nginx/sites-available/olenakhandii ]
+  - [ certbot, --nginx, -d, olenakhandii.com, -d, www.olenakhandii.com, --non-interactive, --agree-tos, -m, nosandriy@gmail.com ]
+  - [ ln, -sf, "/etc/nginx/sites-available/olenakhandii", "/etc/nginx/sites-enabled/" ]
+  - [ nginx, -t ]
+  - [ systemctl, restart, nginx ]
+  - [ cd, "/opt/website" ]
+  - [ python3, -m, venv, venv ]
+  - [ ., venv/bin/activate ]
+  - [ /opt/website/venv/bin/pip, install, -r, requirements.txt ]
+  - [ /opt/website/venv/bin/python, manage.py, collectstatic, --noinput ]
+  # Configure firewall
+  - [ ufw, --force, enable ]
+  - [ ufw, allow, ssh ]
+  - [ ufw, allow, 8000/tcp ]
+  - [ ufw, allow, 80/tcp ]
+  - [ ufw, allow, 443/tcp ]
+  # Start the application
+  - [ /opt/website/venv/bin/gunicorn, myproject.wsgi:application, --bind, "0.0.0.0:8000", --workers, "3", --daemon ]
