@@ -17,22 +17,12 @@ A Blog application in Django contains all the features of a Blog site like login
 
 Creating A Blog In Django has interactive UI design using which users can see what others are posting. It also has an admin panel through which all the blog posts and users can be managed.
 
-<br>
-<br>
-
-![1](PREVIEW/IMG1.png)
-![2](PREVIEW/IMG2.png)
-![3](PREVIEW/IMG3.png)
-![4](PREVIEW/IMG4.png)
-![5](PREVIEW/IMG5.png)
-<br>
-
 ## QuickStart
 
 To get this project up and running locally on your computer:
 
 Set up the Python development environment. We recommend using a Python virtual environment.
-Assuming you have Python setup, run the following commands (if you're on Windows you may use py or py -3 instead of python3 to start Python):
+Assuming you have Python setup, run the following commands:
 ```
 pip3 install -r requirements.txt
 python3 manage.py makemigrations
@@ -43,7 +33,7 @@ python3 manage.py createsuperuser # Create a superuser
 python3 manage.py runserver
 ```
 
-Open a browser to http://127.0.0.1:8000/admin/ to open the admin site
+Open a browser to http://127.0.0.1:8000/admin/ to open the admin site if it is not disabled.
 Create a few test objects of each type.
 Open tab to http://127.0.0.1:8000 to see the main site, with your new objects.
 

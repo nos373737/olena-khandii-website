@@ -189,3 +189,15 @@ def booking(request):
 
 def services(request):
     return render(request,"services.html",{})
+
+def prices(request):
+    return render(request,"prices.html",{})
+
+def rules(request):
+    return render(request,"rules.html",{})
+
+def aboutme(request):
+    return render(request,"about.html",{})
+
+def reviews(request):
+    return render(request,"reviews.html",{})

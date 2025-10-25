@@ -1,0 +1,329 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="TemplateMo">
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
+    rel="stylesheet">
+
+  <title>Відгуки</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+
+  <style>
+    .reviews-wrapper { position: relative; max-width: 780px; margin: 0 auto; }
+    .review-item { display: none; }
+    .review-item.active { display: block; }
+    .nav-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%);
+      background:#fff; border:1px solid #ccc; width:42px; height:42px;
+      display:flex; align-items:center; justify-content:center;
+      cursor:pointer; border-radius:50%; font-size:20px; user-select:none; z-index:10;
+    }
+    .nav-arrow:hover { background:#f5f5f5; }
+    .nav-prev { left:-60px; }
+    .nav-next { right:-60px; }
+    @media (max-width:900px){
+      .nav-prev { left:0; }
+      .nav-next { right:0; }
+    }
+
+    /* Card formatting improvements */
+    .reviews-wrapper .card {
+      text-align: center;
+      padding: 26px 30px;
+      border-radius: 18px;
+      border: 1px solid #e4e4e4;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      background: #ffffff;
+    }
+    .reviews-wrapper .card .card-title {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      margin-top: 12px;
+    }
+    .reviews-wrapper .card-text {
+      line-height: 1.55;
+      font-size: 1.05rem;
+      color: #222;
+      margin-bottom: 14px;
+    }
+    .reviews-wrapper .card small.text-muted {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 0.75rem;
+      letter-spacing: .5px;
+    }
+    .reviews-wrapper .fa-star {
+      font-size: 1rem;
+      margin: 0 2px;
+    }
+    /* Avatar circle refinement */
+    .reviews-wrapper .rounded-circle {
+      box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+    }
+  </style>
+
+</head>
+
+<body>
+
+  {%include 'header.html'%}
+  <!-- Reviews content part -->
+   <div class="container-fluid mt-5 d-flex justify-content-center">
+    <div class="container my-5">
+      <h2 class="mb-4 text-center">Відгуки клієнтів</h2>
+
+      <div class="reviews-wrapper">
+        <div class="nav-arrow nav-prev" id="revPrev" aria-label="Prev">&#10094;</div>
+        <div class="nav-arrow nav-next" id="revNext" aria-label="Next">&#10095;</div>
+
+        <!-- Review 1 -->
+        <div class="card mb-3 review-item active">
+          <div class="d-flex flex-column align-items-center mb-3">
+            <span class="rounded-circle bg-secondary d-flex justify-content-center align-items-center"
+                  style="width:70px; height:70px;">
+              <i class="fa fa-user fa-2x text-white"></i>
+            </span>
+            <h5 class="card-title">Evrim</h5>
+            <div class="mt-2">
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+            </div>
+          </div>
+          <p class="card-text">
+            She is a perfect teacher. She is very friendly,<br>
+            she has high knowledge about IELTS and interviews.<br>
+            I am so glad to met her.
+          </p>
+          <p class="card-text"><small class="text-muted">Дата: 06.06.2022</small></p>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="card mb-3 review-item">
+          <div class="d-flex flex-column align-items-center mb-3">
+            <span class="rounded-circle bg-secondary d-flex justify-content-center align-items-center"
+                  style="width:70px; height:70px;">
+              <i class="fa fa-user fa-2x text-white"></i>
+            </span>
+            <h5 class="card-title">Anastasiia</h5>
+            <div class="mt-2">
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+            </div>
+          </div>
+          <p class="card-text">
+            I have been working with Olena for several months now<br>
+            and I can say with confidence that she is a professional in her field.<br>
+            I notice an improvement in my English level...
+          </p>
+          <p class="card-text"><small class="text-muted">Дата: 23.05.2023</small></p>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="card mb-3 review-item">
+          <div class="d-flex flex-column align-items-center mb-3">
+            <span class="rounded-circle bg-secondary d-flex justify-content-center align-items-center"
+                  style="width:70px; height:70px;">
+              <i class="fa fa-user fa-2x text-white"></i>
+            </span>
+            <h5 class="card-title">Anonymous</h5>
+            <div class="mt-2">
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+            </div>
+          </div>
+          <p class="card-text">
+            So, first of all I want to say that you are an amazing teacher...
+          </p>
+          <p class="card-text"><small class="text-muted">Дата: --.--.----</small></p>
+        </div>
+
+        <!-- Review 4 -->
+        <div class="card mb-3 review-item">
+          <div class="d-flex flex-column align-items-center mb-3">
+            <span class="rounded-circle bg-secondary d-flex justify-content-center align-items-center"
+                  style="width:70px; height:70px;">
+              <i class="fa fa-user fa-2x text-white"></i>
+            </span>
+            <h5 class="card-title">Anonymous</h5>
+            <div class="mt-2">
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+            </div>
+          </div>
+          <p class="card-text">
+            Dear Olena. You are the most incredible teacher ever...
+          </p>
+          <p class="card-text"><small class="text-muted">Дата: --.--.----</small></p>
+        </div>
+
+        <!-- Review 5 -->
+        <div class="card mb-3 review-item">
+          <div class="d-flex flex-column align-items-center mb-3">
+            <span class="rounded-circle bg-secondary d-flex justify-content-center align-items-center"
+                  style="width:70px; height:70px;">
+              <i class="fa fa-user fa-2x text-white"></i>
+            </span>
+            <h5 class="card-title">Anonymous</h5>
+            <div class="mt-2">
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+              <span class="text-warning"><i class="fa fa-star"></i></span>
+            </div>
+          </div>
+          <p class="card-text" style="white-space:pre-line;">| really appreciate your creativity in lesson
+              planning. Every time you surprise me with a
+              new approach and different learning
+              techniques. Each lesson challenges me to be
+              in unfamiliar language situations, helping me
+              expand my skills and confidence. Even living in
+              English-speaking environment doesn’t allow
+              me to have so different topics and learn so
+              many new words or grammar constructions. |
+              wake up at 7.30 and regret it when | need to
+              miss a meeting. Believe me, it says a lot
+              Hi Olena! | wanted to tell you that | am
+              invited for a one year surgical internship in
+              Fitzpatrick referrals 9) @)@) Can You imagine?
+              Olena
+          </p>
+          <p class="card-text"><small class="text-muted">Дата: --.--.----</small></p>
+        </div>
+
+        <!-- Review 6 -->
+         <div class="card mb-3 review-item">
+            <div class="d-flex flex-column align-items-center mb-3">
+              <span class="rounded-circle bg-secondary d-flex justify-content-center align-items-center"
+                    style="width:70px; height:70px;">
+                <i class="fa fa-user fa-2x text-white"></i>
+              </span>
+              <h5 class="card-title">Anonymous</h5>
+              <div class="mt-2">
+                <span class="text-warning"><i class="fa fa-star"></i></span>
+                <span class="text-warning"><i class="fa fa-star"></i></span>
+                <span class="text-warning"><i class="fa fa-star"></i></span>
+                <span class="text-warning"><i class="fa fa-star"></i></span>
+                <span class="text-warning"><i class="fa fa-star"></i></span>
+              </div>
+            </div>
+            <p class="card-text" style="white-space:pre-line;">Hi)
+                  Just wanna share with you)
+                  Yesterday I had a work meeting with potential
+                  customers from America. It was amazing
+                  practice for understanding what he said 😅
+                  I analysed my probs. The main one it's an
+                  answer after his speech. Because he had very
+                  expressive and long speech. But I got 90%
+                  information without subtitles 😊
+                  I thought that it will be hard, but really easy.
+                  Just for future more practice with universal
+                  phrasee 😊 😊 😊
+                  Thank you GY & @it's amazing result for me
+                  At the first lesson I felt so "stupid" in a
+                  positive way, of course. In your lessons I learn
+                  plenty of new information! The material is
+                  always relevant and interesting. You don't miss
+                  any mistake and I really appreciate it))
+                  Your dedication is noticeable and it makes me
+                  want to work harder and harder
+                  I don't have any complaints. My English has
+                  improved thanks to your lessons
+              </p>
+            <p class="card-text"><small class="text-muted">Дата: --.--.----</small></p>
+          </div>
+
+
+        <div class="text-center mt-4">
+          <a class="insta-reviews-btn" href="https://www.instagram.com/s/aGlnaGxpZ2h0OjE4MDE4ODIxMjAzNzc2NDUy?igsh=MTNzM2lxcG1lZWo3aQ=="
+          target="_blank" rel="noopener noreferrer">
+            Більше відгуків в Instagram
+          </a>
+        </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  {% include 'footer.html' %}
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+    crossorigin="anonymous"></script>
+
+  <!-- Additional Scripts -->
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+  <script src="{% static 'assets/js/owl.js' %}"></script>
+  <script src="{% static 'assets/js/slick.js' %}"></script>
+  <script src="{% static 'assets/js/isotope.js' %}"></script>
+  <script src="{% static 'assets/js/accordions.js' %}"></script>
+
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const items = Array.from(document.querySelectorAll('.review-item'));
+      const prev = document.getElementById('revPrev');
+      const next = document.getElementById('revNext');
+      if (!items.length || !prev || !next) return;
+
+      let idx = items.findIndex(el => el.classList.contains('active'));
+      if (idx === -1) { idx = 0; items[0].classList.add('active'); }
+
+      function show(i){
+        items.forEach(r => r.classList.remove('active'));
+        items[i].classList.add('active');
+      }
+
+      prev.addEventListener('click', function() {
+        idx = (idx - 1 + items.length) % items.length;
+        show(idx);
+      });
+
+      next.addEventListener('click', function() {
+        idx = (idx + 1) % items.length;
+        show(idx);
+      });
+    });
+  </script>
+</body>
+
+</html>

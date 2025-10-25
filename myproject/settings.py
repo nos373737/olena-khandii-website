@@ -35,7 +35,8 @@ ALLOWED_HOSTS = [
     'www.olenakhandii.com',
     '136.244.84.166',
     'localhost',
-    '127.0.0.1'
+    '127.0.0.1',
+    '0.0.0.0'
 ]
 
 

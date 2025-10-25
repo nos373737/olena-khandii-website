@@ -14,7 +14,6 @@ runcmd:
   # Configure firewall
   - [ ufw, --force, enable ]
   - [ ufw, allow, ssh ]
-  - [ ufw, allow, 8000/tcp ]
   - [ ufw, allow, 80/tcp ]
   - [ ufw, allow, 443/tcp ]
   # Pull the code and set up the website

@@ -22,24 +22,24 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li>
-            <a class="nav-link" href="{% url 'index' %}">Про мене
+            <a class="nav-link" href="{% url 'aboutme' %}">Про мене
               <span class="sr-only">(current)</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'services' %}">Мої послуги</a>
+            <a class="nav-link" href="{% url 'services' %}">Послуги</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'blog' %}">Відгуки</a>
+            <a class="nav-link" href="{% url 'prices' %}">Ціни</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'blog' %}">Ціни</a>
+            <a class="nav-link" href="{% url 'reviews' %}">Відгуки</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="{% url 'booking' %}">Запис на заняття і наявні місця</a>
-          </li>
+          </li> -->
           
-          {% if user.is_authenticated %}
+          <!-- {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'create' %}">Create</a>
           </li>
@@ -50,10 +50,10 @@
             <a class="nav-link text-primary" href="{% url 'logout' %}">Logout</a>
           </li>
           {% else %}
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'signin' %}"><i class="fa fa-user"></i></a>
-          </li> -->
-          {% endif %}
+          </li>
+          {% endif %} -->
         </ul>
       </div>
     </div>
