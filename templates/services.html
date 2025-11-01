@@ -48,10 +48,19 @@
     .services-card p, .services-card h4, .services-card h5 { line-height:1.5; margin-bottom:.9rem; }
     .services-card h5 { font-weight:600; color:#222; }
     .services-accent { background:rgb(14,10,243); color:#fff; display:inline-block; padding:.40rem .75rem; border-radius:10px; font-size:.75rem; letter-spacing:.5px; margin-bottom:1rem; }
-    @media (max-width:575.98px){
-      .services-card { padding:1.4rem 1.15rem 1.8rem; }
-      .services-card h3 { font-size:1.35rem; }
-    }
+     /* Extra mobile refinements (kept local to this section) */
+      @media (max-width:575.98px){
+        .services-card{padding:1.25rem 1rem 1.6rem;}
+        .services-block + .services-block{margin-top:2.1rem;}
+        .services-card h3{font-size:1.30rem;margin-bottom:.55rem;}
+        .services-card h5{font-size:.95rem;margin-bottom:.45rem;}
+        .services-card p,
+        .services-card li{font-size:.92rem;}
+        .services-card ul{padding-left:1rem;}
+      }
+      .services-card ul{list-style:disc;}
+      .services-card ul ul{list-style:circle;}
+      .services-card li{margin-bottom:.35rem;}
   </style>
 
 </head>
@@ -64,34 +73,36 @@
   <section class="services-section">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-9">
+        <div class="col-12 col-lg-9">
           <div class="services-card">
 
-            <span class="services-accent">ОСНОВНІ НАПРЯМКИ</span>
+            <span class="services-accent d-inline-block">ОСНОВНІ НАПРЯМКИ</span>
 
             <!-- General English -->
             <div class="services-block">
-              <h3>General English</h3>
+              <h3 class="fw-semibold">General English</h3>
               <h5>Які рівні?</h5>
-              <p>A1-C2</p>
+              <p class="mb-2">A1-C2</p>
               <h5>Яка ваша мета?</h5>
-              <ul>
-                <li>Довгострокова: ви хочете вчити англійську, щоб могти говорити в різних ситуаціях:</li>
-                <ul>
-                  <li>В подорожах</li>
-                  <li>В навчанні</li>
-                  <li>На роботі</li>
-                </ul>
+              <ul class="mb-3">
+                <li>
+                  Довгострокова: ви хочете вчити англійську, щоб могти говорити в різних ситуаціях:
+                  <ul class="mt-2">
+                    <li>В подорожах</li>
+                    <li>В навчанні</li>
+                    <li>На роботі</li>
+                  </ul>
+                </li>
               </ul>
               <h5>Який результат?</h5>
-              <ul>
+              <ul class="mb-3">
                 <li>Розширюєте словниковий запас на загальні теми (чим вище рівень, тим абстрактніші теми)</li>
                 <li>Підтягуєте граматику</li>
                 <li>Долаєте свій страх говоріння</li>
                 <li>Починаєте або впевненіше використовуєте автентику: книги, серіали і т.д.</li>
               </ul>
               <h5>Який формат?</h5>
-              <ul>
+              <ul class="mb-0">
                 <li>Індивідуальні / парні / групові</li>
               </ul>
             </div>
@@ -100,63 +111,63 @@
 
             <!-- Exam Prep -->
             <div class="services-block">
-              <h3>Підготовка до ІСПИТІВ</h3>
+              <h3 class="fw-semibold">Підготовка до ІСПИТІВ</h3>
               <h5>Спеціалізація:</h5>
-              <p>IELTS, PTE, CELPIP, НМТ, ЄВІ</p>
+              <p class="mb-2">IELTS, PTE, CELPIP, НМТ, ЄВІ</p>
               <h5>Які рівні?</h5>
-              <p>Ви повинні знати бал, на який розраховуєте. Якщо ваша англійська не відповідає цьому рівню, спочатку працюємо над <em>General English</em>, потім переходимо до підготовки.</p>
+              <p class="mb-2">Ви повинні знати бал, на який розраховуєте. Якщо ваша англійська не відповідає цьому рівню, спочатку працюємо над <em>General English</em>, потім переходимо до підготовки.</p>
               <h5>Яка мета?</h5>
-              <ul>
+              <ul class="mb-3">
                 <li>Вступ до університету за кордоном</li>
                 <li>Переїзд за кордон</li>
                 <li>Пошук роботи за кордоном</li>
               </ul>
               <h5>Який результат?</h5>
-              <ul>
+              <ul class="mb-3">
                 <li>Чітке розуміння структури іспиту</li>
                 <li>Покращення навичок читання, письма, слухання та говоріння</li>
               </ul>
               <h5>Скільки часу потрібно?</h5>
-              <p>Дуже індивідуально. Але точно не тиждень і не рік :)</p>
+              <p class="mb-0">Дуже індивідуально. Але точно не тиждень і не рік :)</p>
             </div>
 
             <div class="services-divider"></div>
 
             <!-- Interview Prep -->
             <div class="services-block">
-              <h3>Підготовка до співбесіди</h3>
+              <h3 class="fw-semibold">Підготовка до співбесіди</h3>
               <h5>Які рівні?</h5>
-              <p>B1-C2</p>
+              <p class="mb-2">B1-C2</p>
               <h5>Яка мета?</h5>
-              <ul>
+              <ul class="mb-3">
                 <li>Впевнено відповідати на питання інтерв'юера англійською</li>
                 <li>Рефлексія над власним досвідом роботи</li>
               </ul>
               <h5>Який результат?</h5>
-              <ul>
+              <ul class="mb-3">
                 <li>Чітке уявлення щодо відповідей на типові питання</li>
                 <li>Покращення навичок самопрезентації</li>
               </ul>
               <h5>Скільки часу потрібно?</h5>
-              <p>В середньому 2–5 занять.</p>
+              <p class="mb-0">В середньому 2–5 занять.</p>
             </div>
 
             <div class="services-divider"></div>
 
             <!-- Business English -->
             <div class="services-block">
-              <h3>Business English</h3>
+              <h3 class="fw-semibold">Business English</h3>
               <h5>Які рівні?</h5>
-              <p>C1</p>
+              <p class="mb-2">C1</p>
               <h5>Яка ваша мета?</h5>
-              <ul>
+              <ul class="mb-3">
                 <li>Ви використовуєте або скоро будете використовувати англійську на роботі</li>
                 <li>Потрібна участь у мітингах, колах, презентаціях</li>
               </ul>
               <h5>Про курс:</h5>
-              <p>Курс не про конкретну сферу, а про універсальні навички комунікації.</p>
+              <p class="mb-2">Курс не про конкретну сферу, а про універсальні навички комунікації.</p>
               <h5>Який результат?</h5>
-              <ul>
+              <ul class="mb-0">
                 <li>Розширюєте робочий словниковий запас</li>
                 <li>Підтягуєте граматику</li>
                 <li>Комунікуєте впевнено та ефективно</li>
@@ -167,22 +178,26 @@
 
             <!-- Asynchronous -->
             <div class="services-block">
-              <h3>Англійська в асинхронному форматі</h3>
+              <h3 class="fw-semibold">Англійська в асинхронному форматі</h3>
               <h5>Які рівні?</h5>
-              <p>B2-C1</p>
+              <p class="mb-2">B2-C1</p>
               <h5>Яка ваша мета?</h5>
-              <ul>
-                <li>Точково попрацювати над конкретним запитом:</li>
-                <ul>
-                  <li>Підготувати виступ / презентацію</li>
-                  <li>Розширити словниковий запас на певну тему</li>
-                  <li>Попрацювати над вашим Writing</li>
-                </ul>
+              <ul class="mb-3">
+                <li>
+                  Точково попрацювати над конкретним запитом:
+                  <ul class="mt-2">
+                    <li>Підготувати виступ / презентацію</li>
+                    <li>Розширити словниковий запас на певну тему</li>
+                    <li>Попрацювати над вашим Writing</li>
+                  </ul>
+                </li>
               </ul>
               <h5>Яка ваша проблема?</h5>
-              <ul><li>Немає стабільного часу для занять</li></ul>
+              <ul class="mb-3">
+                <li>Немає стабільного часу для занять</li>
+              </ul>
               <h5>Як вирішуємо?</h5>
-              <ul>
+              <ul class="mb-0">
                 <li>Я надсилаю завдання та time frame</li>
                 <li>Ви виконуєте та надсилаєте</li>
                 <li>Я перевіряю і даю фідбек</li>

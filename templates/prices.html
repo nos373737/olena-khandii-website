@@ -34,40 +34,65 @@
   {%include 'header.html'%}
 
   <!-- About my prices content part -->
-  <div class="container my-5">
-    <h2 style="color:#0e0af3; font-size:2.4rem; line-height:1.0;">Ціни</h2>
-    <br></br>
-    <ul class="list-group mb-4">
-      <li class="list-group-item">
-        <strong>Індивідуальне заняття - загальний запит</strong>
-        <br>
-        <span class="text-muted">(загальна англійська, бізнес-англійська)</span>
-        <span class="float-end">22$</span>
-      </li>
-      <li class="list-group-item">
-        <strong>Індивідуальне заняття - особливий запит</strong>
-        <br>
-        <span class="text-muted">(підготовка до співбесіди / презентації, іспиту, тощо)</span>
-        <span class="float-end">25$</span>
-      </li>
-      <li class="list-group-item">
-        <strong>Парне заняття</strong>
-        <span class="float-end">15$ з людини</span>
-      </li>
-      <li class="list-group-item">
-        <strong>Міні-група</strong>
-        <span class="text-muted">(максимум 4 людини)</span>
-        <span class="float-end">12$ з людини</span>
-      </li>
-    </ul>
-    <div class="alert alert-info" role="alert">
-      Оплата здійснюється в гривнях за актуальним курсом на момент здійснення оплати на рахунок ФОП.
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-md-10">
+        <h2 class="mb-4 fw-bold text-primary">Ціни</h2>
+        <ul class="list-group mb-4">
+          <li class="list-group-item d-flex flex-column flex-sm-row justify-content-between align-items-sm-center">
+            <div>
+              <strong>Індивідуальне заняття — загальний запит</strong><br>
+              <small class="text-muted">загальна англійська, бізнес-англійська</small>
+            </div>
+            <span class="mt-2 mt-sm-0 badge bg-primary fs-6">22$</span>
+          </li>
+          <li class="list-group-item d-flex flex-column flex-sm-row justify-content-between align-items-sm-center">
+            <div>
+              <strong>Індивідуальне заняття — особливий запит</strong><br>
+              <small class="text-muted">підготовка до співбесіди / презентації, іспиту, тощо</small>
+            </div>
+            <span class="mt-2 mt-sm-0 badge bg-primary fs-6">25$</span>
+          </li>
+          <li class="list-group-item d-flex flex-column flex-sm-row justify-content-between align-items-sm-center">
+            <div>
+              <strong>Парне заняття</strong><br>
+              <small class="text-muted">2 людини</small>
+            </div>
+            <span class="mt-2 mt-sm-0 badge bg-primary fs-6">15$ / людина</span>
+          </li>
+          <li class="list-group-item d-flex flex-column flex-sm-row justify-content-between align-items-sm-center">
+            <div>
+              <strong>Міні-група</strong><br>
+              <small class="text-muted">максимум 4 людини</small>
+            </div>
+            <span class="mt-2 mt-sm-0 badge bg-primary fs-6">12$ / людина</span>
+          </li>
+        </ul>
+
+        <div class="small px-3 py-3 rounded-3 shadow-sm" style="background:rgba(0,123,255,0.08); border-left:4px solid var(--bs-primary); color:#2a2a2a;">
+          Оплата здійснюється в гривнях за актуальним курсом на момент здійснення оплати на рахунок ФОП.
+        </div>
+        <div class="alert alert-info d-flex flex-column flex-md-row align-items-start gap-3 shadow-sm rounded-3 p-4 mt-4"
+             style="background:linear-gradient(135deg, rgba(13,110,253,.12), rgba(13,110,253,.05));">
+          <div class="flex-shrink-0">
+            <span class="d-inline-flex justify-content-center align-items-center rounded-circle bg-primary bg-opacity-25"
+            style="width:56px;height:56px;">
+              <i class="fa fa-info-circle text-primary fs-3" aria-hidden="true"></i>
+            </span>
+          </div>
+          <div class="flex-grow-1">
+            <h6 class="fw-bold text-primary mb-2">Оплата першого заняття</h6>
+            <p class="mb-3 mb-md-2">
+              Перше заняття оплачується разово.<br>
+              Як оплачуються усі наступні, читай за посиланням:
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="{% url 'rules' %}" class="btn btn-sm btn-outline-primary px-3">Детальні правила</a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <p>
-      Перше заняття оплачується разово.<br>
-      Як оплачуються усі наступні, читай 
-      <a href="{% url 'rules' %}">ТУТ</a>
-    </p>
   </div>
 
   {% include 'footer.html' %}
