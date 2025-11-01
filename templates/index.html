@@ -37,29 +37,25 @@
 
 <body>
   {%include 'header.html'%}
-  <div class="container-fluid mt-5 d-flex justify-content-center">
-    <div class="row w-100 justify-content-center">
-      <!-- Text Section -->
-      <div class="col-lg-8 col-md-10 col-12">
-        <div class="text-content text-center">
-          <div class="bg-primary text-white py-2 px-3 mb-3 rounded-3">
-            <marquee behavior="scroll" direction="left" scrollamount="7" style="font-size: 1.5rem;">
-              English Teacher Online | Викладач англійської онлайн
-            </marquee>
-          </div>
-          <h2 class="mb-4">Про адекватне вивчення мови!</h2>
-          <p>
-            На індиві місць нема, але доступні парні та міні-групи для рівнів A1-C1. 
-            Викладач сертифікований Cambridge (CELTA A). 
-          </p>
-          <p class="mt-3">
-            🗣️ Почніть говорити вже на рівні А1! Приєднуйтесь до наших занять і досягайте своїх мовних цілей.
-          </p>
-          <a href="{% url 'services' %}" class="btn btn-primary btn-lg mt-3">Дізнатися більше</a>
-        </div>
+<!-- ...existing code... -->
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 text-center">
+      <h1 class="fw-bold mb-3" style="color:#0e0af3;">Відверто про вивчення мови!</h1>
+      <p class="lead mb-3">
+        CELTA A сертифікований викладач. Розмовна практика з першого тижня. Групи A1–C1, Exam & Business English.
+      </p>
+      <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-2">
+        <a href="{% url 'services' %}" class="btn btn-primary btn-lg px-4">Послуги</a>
+        <a href="{% url 'prices' %}" class="btn btn-outline-primary btn-lg px-4">Ціни</a>
+      </div>
+      <div class="mt-4 small text-muted">
+        <span>CELTA A</span> • <span>IELTS / PTE / НМТ</span> • <span>Business / Interview Prep</span>
       </div>
     </div>
   </div>
+</div>
+<!-- ...existing code... -->
 <!-- 
   {% if user.is_authenticated %}
   <div class="container mt-5">

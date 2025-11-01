@@ -12,7 +12,7 @@
     href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
     rel="stylesheet">
 
-  <title>Послуги</title>
+  <title>Правила</title>
 
   <!-- Bootstrap core CSS -->
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
@@ -26,6 +26,29 @@
   <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
 
+    <style>
+    .services-section { background:#ffffff; position:relative; padding-top:2.5rem; padding-bottom:3.5rem; }
+    .services-card {
+      background:#fff;
+      border:1px solid #eee;
+      border-radius:16px;
+      box-shadow:0 6px 20px -5px rgba(0,0,0,.08);
+      transition:box-shadow .25s ease;
+      padding:2.2rem 2.2rem 2.6rem;
+      font-family:'Roboto',sans-serif;
+    }
+    .services-card:hover { box-shadow:0 10px 28px -6px rgba(0,0,0,.12); }
+    .services-card h2 { color:#0e0af3; font-weight:600; line-height:1.05; font-size:2.2rem; margin-bottom:1.8rem; text-align:center; }
+    .services-card ul { margin:0 0 1.1rem; padding-left:1.15rem; }
+    .services-card li { line-height:1.55; }
+    .services-card strong { font-weight:600; }
+    .services-card em { color:#444; }
+    .services-card .danger-note { color:#dc3545; font-weight:600; }
+    @media (max-width:575.98px){
+      .services-card { padding:1.4rem 1.15rem 1.8rem; }
+      .services-card h2 { font-size:1.65rem; }
+    }
+  </style>
 
 </head>
 
@@ -34,28 +57,28 @@
   {%include 'header.html'%}
 
   <!-- About my rules content part -->
-  <div class="container mt-5 mb-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-8">
-        <div class="card shadow-sm">
-          <div class="card-body">
-            <h2 class="card-title text-center mb-4">Правила</h2>
+    <section class="services-section">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-9">
+          <div class="services-card">
+            <h2 style="color:#0e0af3; font-size:2.4rem; line-height:1.0;">Правила</h2>
             <ul class="list-unstyled">
               <li class="mb-3">
-                <strong>Групове заняття</strong> скасовується лише у випадку, якщо його відмінили <u>усі учасники групи більше ніж за 12 годин до його початку</u>.
+                <strong>Групове заняття</strong> скасовується лише якщо його відмінили <u>усі учасники групи більше ніж за 12 годин до початку</u>.
               </li>
               <li class="mb-3">
-                Якщо один з учасників групи не має змоги бути присутнім на занятті, він отримує <strong>запис всього заняття</strong>, виконує всі завдання самостійно, і може задавати мені питання в тг :) <br>
-                <span class="text-danger">Оплата за таке заняття списується.</span>
+                Якщо один з учасників не може бути присутнім, він отримує <strong>запис заняття</strong>, виконує завдання самостійно і може задавати питання в тг.<br>
+                <span class="danger-note">Оплата за таке заняття списується.</span>
               </li>
               <li class="mb-3">
-                <em>Це не стосується відпустки, про яку ви попереджаєте заздалегідь :)</em>
+                <em>Не стосується відпустки, про яку попереджено заздалегідь.</em>
               </li>
               <li class="mb-3">
                 <strong>ВИНЯТКИ, коли оплата не списується:</strong>
                 <ul>
                   <li>смерть близьких родичів</li>
-                  <li>прямі наслідки атак русні (не дай Бог)</li>
+                  <li>прямі наслідки атак</li>
                   <li>раптове тяжке захворювання</li>
                   <li>ДТП</li>
                 </ul>
@@ -63,17 +86,15 @@
               <li class="mb-3">
                 <strong>Для студентів:</strong>
                 <ul>
-                  <li>які займаються <u>двічі на тиждень</u> — оплачувати <strong>мінімум 4 заняття наперед</strong>.</li>
-                  <li>які займаються <u>раз на тиждень</u> — <strong>мінімум два заняття наперед</strong>.</li>
+                  <li><u>2 рази на тиждень</u> — оплата мінімум <strong>4 занять наперед</strong>.</li>
+                  <li><u>1 раз на тиждень</u> — оплата мінімум <strong>2 занять наперед</strong>.</li>
                 </ul>
               </li>
               <li class="mb-3">
-                Облік занять вестиметься в окремому файлі для кожного студента. Після кожного заняття, прохання ставити свій підпис (ваше ім'я і прізвище) і слідкувати за цим самостійно, без моїх нагадувань (щоб був порядок і підтвердження наданої вам послуги). <br>
-                Також завдяки цій системі вам буде зручніше слідкувати за оплатами і не протерміновувати їх.
+                Облік занять ведеться в окремому файлі. Після кожного заняття ставите свій підпис (ім'я і прізвище) для підтвердження наданої послуги та контролю оплат.
               </li>
-              <li class="mb-3">
-                <span class="text-danger">У разі якщо оплати немає за 24 години до початку заняття, таке заняття автоматично скасовується, і слот відкривається для запису іншими студентами.</span>
-                <br>
+              <li class="mb-0">
+                <span class="danger-note">Якщо оплати немає за 24 години до початку — заняття автоматично скасовується, слот відкривається для інших.</span><br>
                 Давайте цінувати час один одного.
               </li>
             </ul>
@@ -81,7 +102,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   {% include 'footer.html' %}
 
