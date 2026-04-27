@@ -1,196 +1,149 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="TemplateMo">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600;700&display=swap" 
-  rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-  <title>Olena Khandii - English Teacher Online</title>
-
-  <!-- Bootstrap core CSS -->
+  <meta name="description" content="Англійська з Olena Khandii: CELTA Pass A, живі заняття для дорослих, іспити, Business English та блог про мову без зайвого пафосу.">
+  <title>Olena Khandii | English teacher and blog</title>
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
   <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicon-32x32.png' %}">
   <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon-16x16.png' %}">
   <link rel="manifest" href="{% static 'assets/images/site.webmanifest' %}">
 </head>
 
-
-<!-- Additional CSS Files -->
-<link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
-<link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
-<link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-<link rel="stylesheet" href="{% static 'assets/css/flex-slider.css' %}">
-
-</head>
-
 <body>
-  {%include 'header.html'%}
-<!-- ...existing code... -->
-<div class="container py-5">
-  <div class="row justify-content-center">
-    <div class="col-lg-8 text-center">
-      <h1 class="fw-bold mb-3" style="color:#0e0af3;">Відверто про вивчення мови!</h1>
-      <p class="lead mb-3">
-        CELTA A сертифікований викладач. Розмовна практика з першого тижня. Групи A1–C1, Exam & Business English.
-      </p>
-      <div class="d-flex flex-column flex-sm-row justify-content-center gap-3 mt-2">
-        <a href="{% url 'services' %}" class="btn btn-primary btn-lg px-4">Послуги</a>
-        <a href="{% url 'prices' %}" class="btn btn-outline-primary btn-lg px-4">Ціни</a>
-      </div>
-      <div class="mt-4 small text-muted">
-        <span>CELTA A</span> • <span>IELTS / PTE / НМТ</span> • <span>Business / Interview Prep</span>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- ...existing code... -->
-<!-- 
-  {% if user.is_authenticated %}
-  <div class="container mt-5">
-    <h5>MY POSTS</h5>
-    <hr>
-    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-1" class="blog-posts">
+  {% include 'header.html' %}
 
-      {% for post in posts|slice:"0:3" %}
-      <div class="col col-lg-4 col-md-6 col-12 mb-2 blog-post">
-        <img src="{{media_url}}{{post.image}}" alt="" width="100%" height="300px">
-        <div class=" px-3 py-5 shadow">
-        <a href="{% url 'post' post.id %}" class="text-decoration-none text-dark">
-          <span class="text-white bg-info text-center rounded-3 mt-5" style="padding: 8px;">{{post.category.name}}</span>
-          <h5 class="mt-4">{{post.postname}}</h5>
-          <p>Category: {{ post.category.name }}</p>
-        </a>
-        <form method="post" action="{% url 'increaselikes' post.id %}">
-          {% csrf_token %}
-          <button class="float-right small" type="submit"
-            style="border: none; background: transparent; font-size: 25px;"><i
-              class="fa fa-heart text-danger"></i></button>
-        </form>
-
-        <p>{{post.content|slice:"0:100"}}...</p>
-        <p class="small text-primary">{{post.time}} </p>
-      </div>
-    </div>
-    {% endfor %}
-  </div>
-  <a class="text-danger text-decoration-none" href="{% url 'profile' user.id %}" style="cursor:pointer;">View All
-    >></a>
-  </div>
-  {% endif %} -->
-<!-- 
-  <section class="blog-posts">
-    <div class="container">
-      <h3 class="mb-2" style="color: rgb(227, 73, 73); font-size: 30px; font-weight: bold;">RECENT POSTS</h3>
-      <hr>
-      <div class=" row">
-        <div class="col-lg-8">
-          <div class="all-blog-posts">
-            <div class="row">
-
-              {% for post in top_posts|slice:"0:7" %}
-              <div class="col col-lg-6 col-12 pb-2 blog-post ">
-                <img src="{{media_url}}{{post.image}}" alt="" class="img-fluid" width="100%">
-                <div class="px-3 py-5 shadow">
-                  <a href="{% url 'post' post.id %}" class="text-decoration-none text-dark mb-3">
-                    <span class="text-white bg-info text-center rounded-3 mt-5"
-                      style="padding: 8px;">{{post.category.name}}</span>
-                    <h5 class="mt-4">{{post.postname}}</h5>
-                  </a>
-                  <form method="post" action="{% url 'increaselikes' post.id %}">
-                    {% csrf_token %}
-                    <button class="float-right small" type="submit"
-                      style="border: none; background: transparent; font-size: 25px;"><i
-                        class="fa fa-heart text-danger"></i></button>
-                  </form>
-
-                  <p class="mt-2">{{post.content|slice:"0:100"}}...</p>
-                  <p class="small text-primary">{{post.time}} </p>
-                </div>
-              </div>
-              {% endfor %}
-            </div>
+  <main>
+    <section class="home-hero" style="background-image: linear-gradient(90deg, rgba(249,247,242,.98) 0%, rgba(249,247,242,.9) 44%, rgba(249,247,242,.25) 70%), url('{% static 'assets/images/my-image-01.jpg' %}');">
+      <div class="container">
+        <div class="hero-copy">
+          <p class="eyebrow">CELTA Pass A · adults only · A1-C1</p>
+          <h1>Англійська, яка звучить як ви.</h1>
+          <p class="hero-lead">
+            Я допомагаю дорослим говорити впевненіше, готуватися до іспитів та співбесід, працювати з англійською без хаосу і випадкових вправ.
+          </p>
+          <div class="hero-actions">
+            <a href="{% url 'services' %}" class="btn btn-brand">Обрати формат</a>
+            <a href="{% url 'blog' %}" class="btn btn-quiet">Читати блог</a>
           </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="sidebar">
-            <div class="row">
-              <div class="col-lg-12">
-                <div class="sidebar-item recent-posts">
-                  <div class="sidebar-heading">
-                    <h2 style="color: rgb(240, 124, 78); font-size: 30px; font-weight: bold;">Popular Posts</h2>
-                  </div>
-                  <div class="content">
-                    <ul>
-
-                      {% for post in recent_posts|slice:"0:" %}
-                      <li>
-                        <img src="{{media_url}}{{post.image}}" class="img-fluid" alt="" width="100%">
-                        <a href="post-details.html">
-                          <a href="{% url 'post' post.id %}" class="text-decoration-none text-dark">
-                            <h5>{{post.postname}}</h5>
-                          </a>
-                          <span>{{post.time}}</span>
-                        </a>
-                      </li>
-                      {% endfor %}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-            </div>
+          <div class="hero-proof" aria-label="Teaching focus">
+            <span>IELTS / PTE</span>
+            <span>Business English</span>
+            <span>Interview prep</span>
           </div>
         </div>
       </div>
-    </div>
-  </section> -->
+    </section>
 
+    <section class="section-strip">
+      <div class="container">
+        <div class="strip-grid">
+          <div>
+            <span class="metric">13+</span>
+            <span>років викладання</span>
+          </div>
+          <div>
+            <span class="metric">CELTA A</span>
+            <span>Cambridge certified</span>
+          </div>
+          <div>
+            <span class="metric">1:1 / pairs / groups</span>
+            <span>формати під різні цілі</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Start here</p>
+          <h2>Що можна робити разом</h2>
+        </div>
+
+        <div class="offer-grid">
+          <a class="offer-card" href="{% url 'services' %}">
+            <span class="offer-index">01</span>
+            <h3>General English</h3>
+            <p>Прокачати говоріння, граматику, словник і спокійно перейти до реального використання мови.</p>
+          </a>
+          <a class="offer-card" href="{% url 'services' %}">
+            <span class="offer-index">02</span>
+            <h3>Exam & interview prep</h3>
+            <p>IELTS, PTE, CELPIP, НМТ, ЄВІ, співбесіди та презентації з фокусом на конкретний результат.</p>
+          </a>
+          <a class="offer-card" href="{% url 'services' %}">
+            <span class="offer-index">03</span>
+            <h3>Business English</h3>
+            <p>Комунікація для мітингів, презентацій, робочих листів і ситуацій, де треба звучати професійно.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section blog-preview-section">
+      <div class="container">
+        <div class="section-heading section-heading-row">
+          <div>
+            <p class="eyebrow">Blog</p>
+            <h2>Свіжі нотатки</h2>
+          </div>
+          <a href="{% url 'blog' %}" class="text-link">Усі пости</a>
+        </div>
+
+        <div class="post-card-grid">
+          {% for post in recent_posts|slice:"0:3" %}
+          <article class="post-card">
+            <a href="{% url 'post' post.id %}" class="post-image-link">
+              {% if post.image %}
+              <img src="{{ post.image.url }}" alt="{{ post.postname }}">
+              {% else %}
+              <img src="{% static 'assets/images/education.jpg' %}" alt="{{ post.postname }}">
+              {% endif %}
+            </a>
+            <div class="post-card-body">
+              <span class="tag">{{ post.category.name }}</span>
+              <h3><a href="{% url 'post' post.id %}">{{ post.postname }}</a></h3>
+              <p>{{ post.content|striptags|truncatechars:150 }}</p>
+              <div class="post-meta">
+                <span>{{ post.time }}</span>
+                <span>{{ post.likes }} likes</span>
+              </div>
+            </div>
+          </article>
+          {% empty %}
+          <div class="empty-state">
+            <h3>Блог готовий до першої публікації.</h3>
+            <p>Коли з'являться записи, вони автоматично підтягнуться сюди.</p>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-content">
+          <p class="eyebrow">For future monetisation</p>
+          <h2>Сайт уже може працювати як власна платформа.</h2>
+          <p>Блог, email-запити, сторінки послуг і цін можна поступово розвивати в продукти: групи, воркбуки, клуб розмовної практики або платну розсилку.</p>
+          <a href="{% url 'contact' %}" class="btn btn-light">Написати запит</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   {% include 'footer.html' %}
 
-
-  <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-    crossorigin="anonymous"></script>
-
-  <!-- Additional Scripts -->
   <script src="{% static 'assets/js/custom.js' %}"></script>
-  <script src="{% static 'assets/js/owl.js' %}"></script>
-  <script src="{% static 'assets/js/slick.js' %}"></script>
-  <script src="{% static 'assets/js/isotope.js' %}"></script>
-  <script src="{% static 'assets/js/accordions.js' %}"></script>
-
-
-  <script language="text/Javascript">
-    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-    function clearField(t) {                   //declaring the array outside of the
-      if (!cleared[t.id]) {                      // function makes it static and global
-        cleared[t.id] = 1;  // you could use true and false, but that's more typing
-        t.value = '';         // with more chance of typos
-        t.style.color = '#fff';
-      }
-    }
-
-  </script>
-
 </body>
 
 </html>

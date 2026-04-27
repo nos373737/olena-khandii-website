@@ -25,10 +25,10 @@ MEDIA_DIR = os.path.join(BASE_DIR,"media")
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-s0eg9q5^i%wy4n5m78yvbpwkb3j3u)w8nx=pr&c6+ag8ltvs5t"
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "django-insecure-s0eg9q5^i%wy4n5m78yvbpwkb3j3u)w8nx=pr&c6+ag8ltvs5t")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DJANGO_DEBUG", "True") == "True"
 
 ALLOWED_HOSTS = [
     'olenakhandii.com',
@@ -38,6 +38,9 @@ ALLOWED_HOSTS = [
     '127.0.0.1',
     '0.0.0.0'
 ]
+
+if os.getenv("DJANGO_ALLOWED_HOSTS"):
+    ALLOWED_HOSTS = [host.strip() for host in os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",") if host.strip()]
 
 
 # Application definition
@@ -53,8 +56,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.middleware.security.SecurityMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -125,6 +128,7 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [STATIC_DIR]
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 MEDIA_URL = "media/"
 MEDIA_ROOT = MEDIA_DIR
 # Default primary key field type

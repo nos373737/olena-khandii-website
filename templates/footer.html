@@ -1,120 +1,35 @@
-
-<style>
-  footer h4 {
-  font-size: 18px;
-  margin-bottom: 15px;
-  letter-spacing: 1px;
-  }
-
-  footer ul li a {
-    color: #b3b3b3;
-    transition: color 0.3s ease;
-  }
-
-  footer ul li a:hover {
-    color: #ffffff;
-    text-decoration: underline;
-  }
-
-  footer p {
-    font-size: 14px;
-    color: #b3b3b3;
-  }
-
-  /* Ensure list items are visible */
-  ul.list-unstyled li {
-    margin-bottom: 10px; /* Add spacing between list items */
-  }
-
-  ul.list-unstyled li a {
-    color: #b3b3b3; /* Ensure the text color contrasts with the background */
-    text-decoration: none; /* Remove underline */
-    transition: color 0.3s ease; /* Add hover effect */
-  }
-
-  ul.list-unstyled li a:hover {
-    color: #ffffff; /* Change color on hover for better visibility */
-    text-decoration: underline; /* Optional: Add underline on hover */
-  }
-
-  /* Adjust padding for better spacing */
-  ul.list-unstyled {
-    padding-left: 0; /* Remove default padding */
-    margin-top: 10px; /* Add spacing above the list */
-  }
-
-  @media screen and (max-width:600px) {
-
-    h4,
-    li {
-      text-align: center;
-    }
-  }
-</style>
-
-<footer class="bg-dark text-light py-5">
+<footer class="site-footer">
   <div class="container">
-    <div class="row">
-      <!-- Cooperation Steps -->
-      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-        <h4 class="text-light">Етапи співпраці</h4>
-        <ul class="list-unstyled">
-          <li><a href="{% url 'rules' %}" class="text-unmuted">Правила & Оплата</a></li>
-          <li><a href="#" class="text-unmuted">Детальна Інформація</a></li>
-        </ul>
+    <div class="footer-grid">
+      <div>
+        <a class="footer-brand" href="{% url 'index' %}">Olena Khandii</a>
+        <p>English teacher, CELTA Pass A. Особистий сайт, блог і майбутня база для власних освітніх продуктів.</p>
       </div>
 
-      <!-- Profile -->
-      <!-- <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-        <h4 class="text-light">ПРОФІЛЬ</h4>
-        <ul class="list-unstyled">
-          <li><a href="{% url 'signin' %}" class="text-unmuted">Увійти</a></li>
-          <li><a href="{% url 'signup' %}" class="text-unmuted">Вийти</a></li>
-        </ul>
-      </div> -->
-
-      <!-- Information -->
-      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-        <h4 class="text-light">Інформація</h4>
-        <ul class="list-unstyled">
-          <li><a href="{% url 'blog' %}" class="text-unmuted">Мій Блог</a></li>
-        </ul>
+      <div>
+        <h4>Навчання</h4>
+        <a href="{% url 'services' %}">Послуги</a>
+        <a href="{% url 'prices' %}">Ціни</a>
+        <a href="{% url 'rules' %}">Правила & оплата</a>
       </div>
 
-      <!-- Social Links -->
-      <div class="col-lg-3 col-md-6 col-sm-12 mb-4">
-        <h4 class="text-light">Як мене знайти?</h4>
-        <ul class="list-unstyled">
-          <li>
-            <a href="https://www.instagram.com/olena_khandii" class="text-unmuted" target="_blank" rel="noopener">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="#b3b3b3" viewBox="0 0 24 24" style="vertical-align:middle; margin-right:6px;">
-                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.975.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.851s-.011 3.584-.069 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.975-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.011-4.85-.069c-1.366-.062-2.633-.334-3.608-1.308-.975-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.851c.062-1.366.334-2.633 1.308-3.608.974-.974 2.241-1.246 3.608-1.308C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.659.396 3.678 1.378c-.982.982-1.247 2.094-1.306 3.374C2.013 5.741 2 6.151 2 12c0 5.849.013 6.259.072 7.548.059 1.28.324 2.392 1.306 3.374.981.982 2.093 1.247 3.374 1.306C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.281-.059 2.393-.324 3.374-1.306.982-.982 1.247-2.094 1.306-3.374.059-1.289.072-1.699.072-7.548 0-5.849-.013-6.259-.072-7.548-.059-1.28-.324-2.392-1.306-3.374-.981-.982-2.093-1.247-3.374-1.306C15.668.013 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
-              </svg>
-              Instagram
-            </a>
-          </li></svg>
-        </ul>
+      <div>
+        <h4>Контент</h4>
+        <a href="{% url 'blog' %}">Блог</a>
+        <a href="{% url 'aboutme' %}">Про мене</a>
+        <a href="{% url 'reviews' %}">Відгуки</a>
       </div>
+
+      <div>
+        <h4>Контакт</h4>
+        <a href="{% url 'contact' %}">Написати запит</a>
+        <a href="https://www.instagram.com/olena_khandii" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Olena Khandii. Всі права захищені.</span>
+      <span>Договір публічної оферти · Політика конфіденційності</span>
     </div>
   </div>
-
-  <div class="container">
-    <div class="container mt-4">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-    </svg>      <p class="mb-0">&copy; Всі права захищені 2025</p>
-        </div>
-      </div>
-    </div>
-  
-    <div class="container mt-3">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <a href="#" class="text-unmuted d-block mb-2">Договір публічної оферти</a>
-          <span class="text-unmuted">Політика конфіденційності</span>
-        </div>
-      </div>
-    </div>
-  </div>
-  
 </footer>

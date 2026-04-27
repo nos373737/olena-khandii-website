@@ -1,72 +1,117 @@
-<div align="center">
+# Olena Khandii Website
 
-  <h1 align="center">Python Django Blog Website</h1>
+Personal Django website for an English teacher. The site is designed to work as a public profile, blog, service catalogue, reviews page, and a future base for monetisation through groups, digital products, newsletters, or paid learning content.
 
+## Stack
 
-A Blog application in Django contains all the features of a Blog site like login/register into the system, add blog post with title, description and image and edit or delete the blog post.
+- Python / Django
+- SQLite for local development
+- Bootstrap 4 vendor assets plus custom CSS
+- Gunicorn for production-style serving
+- WhiteNoise for static files
 
+## Local Setup
 
-  <a href="https://blogs-n2mq.onrender.com/"><strong>➥ Live Demo</strong></a>
+The Makefile is the source of truth for day-to-day commands.
 
-</div>
-
-<br />
-
-## 📃 Description
-
-
-Creating A Blog In Django has interactive UI design using which users can see what others are posting. It also has an admin panel through which all the blog posts and users can be managed.
-
-## QuickStart
-
-To get this project up and running locally on your computer:
-
-Set up the Python development environment. We recommend using a Python virtual environment.
-Assuming you have Python setup, run the following commands:
-```
-pip3 install -r requirements.txt
-python3 manage.py makemigrations
-python3 manage.py migrate
-python3 manage.py collectstatic
-python3 manage.py test # Ignore this until tests will be created
-python3 manage.py createsuperuser # Create a superuser
-python3 manage.py runserver
+```bash
+make install
+make migrate
+make run-dev
 ```
 
-Open a browser to http://127.0.0.1:8000/admin/ to open the admin site if it is not disabled.
-Create a few test objects of each type.
-Open tab to http://127.0.0.1:8000 to see the main site, with your new objects.
+Open the site at:
 
-## Features 
+```text
+http://127.0.0.1:8000/
+```
 
-- **Manage Blog** :– In this feature includes the CRUD operation in a blog or content you create like adding, editing and deleting content of the blog
-- **Login System** :- In this feature the admin can login to the system and manage all the feature of the system.
-- **Blog** :- In this method which is the main method of the system.
-- **Media** :- In this method which you can found all the media that you are upload in the system.
-- **Template** :- In this method which is the design of the system that consist of HTML,CSS and JavaScript.
+Open the Django admin at:
 
+```text
+http://127.0.0.1:8000/admin/
+```
 
+Create an admin user when needed:
 
-## 🚀 Setup/Installation Requirements
+```bash
+venv/bin/python manage.py createsuperuser
+```
 
-To view the website, 
-* click [Python Django Blog Website](https://github.com/keerti1924/Python-Django-Blog-Website.git)
-or 
-* copy the link https://github.com/keerti1924/Python-Django-Blog-Website.git paste it to your browser and load it.  
+## Makefile Commands
 
-## 🛠 Built With
+```bash
+make install-venv
+```
 
-* HTML
-* CSS
-* JAVASCRIPT
-* PYTHON
-* DJANGO
-* DATABASE 
+Creates the local `venv`.
 
-The system is built fully in Django Framework in back-end and HTML, CSS in front-end. It has full-featured user interface with all the functionalities
+```bash
+make install-deps-in-venv
+```
 
+Installs Python dependencies into `venv`.
 
-## ⭐️ Show your support 
+```bash
+make install
+```
 
-Give a ⭐️ if you like this project!
+Creates the virtual environment if needed and installs dependencies.
 
+```bash
+make migrate
+```
+
+Applies database migrations.
+
+```bash
+make collectstatic
+```
+
+Collects static assets for production-style serving.
+
+```bash
+make test
+```
+
+Runs the Django test suite.
+
+```bash
+make run-dev
+```
+
+Runs the Django development server on `0.0.0.0:8000`.
+
+```bash
+make run-webserver
+```
+
+Runs migrations, collects static files, and starts Gunicorn with `gunicorn_config.py`.
+
+```bash
+make run-webserver-bg
+```
+
+Starts Gunicorn in the background and writes output to `gunicorn.log`.
+
+## Content Workflow
+
+1. Create categories in Django admin.
+2. Add blog posts with title, category, content, and image.
+3. Use the public blog page to validate how posts appear.
+4. Keep service, pricing, rules, and review pages updated as the business offer changes.
+
+## Frontend Direction
+
+The current design is built around a personal teacher brand rather than a generic blog template:
+
+- clear hero with Olena as the first-viewport signal
+- direct paths to services, prices, reviews, and blog
+- modern editorial blog cards with image fallbacks
+- placeholders that make future newsletter or paid content features straightforward
+
+## Notes
+
+- `db.sqlite3` is suitable for local development. Use a production database before serious monetisation.
+- Move sensitive settings such as `SECRET_KEY` and `DEBUG` to environment variables before production hardening.
+- Add real tests around post creation, comments, contact requests, and auth flows as the project grows.

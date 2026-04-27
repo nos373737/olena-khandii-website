@@ -1,72 +1,28 @@
-<!-- ***** Preloader Start ***** -->
-<div id="preloader">
-  <div class="jumper">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>
-</div>
-<!-- ***** Preloader End ***** -->
-
-<!-- Header -->
-<header class="">
-  <nav class="navbar navbar-expand-lg bg-white">
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg navbar-light">
     <div class="container">
-      <a class="navbar-brand" href="{% url 'index' %}">
-        <h2>OLENA<span style="color: rgb(14, 10, 243);">KHANDII</span></h2>
+      <a class="navbar-brand brand-mark" href="{% url 'index' %}" aria-label="Olena Khandii home">
+        <span class="brand-name">Olena Khandii</span>
+        <span class="brand-role">English teacher</span>
       </a>
+
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li>
-            <a class="nav-link" href="{% url 'aboutme' %}">Про мене
-              <span class="sr-only">(current)</span>
-            </a>
+        <ul class="navbar-nav ml-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link" href="{% url 'aboutme' %}">Про мене</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'services' %}">Послуги</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'prices' %}">Ціни</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'reviews' %}">Відгуки</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'blog' %}">Блог</a></li>
+          <li class="nav-item ml-lg-3">
+            <a class="btn btn-brand btn-sm" href="{% url 'contact' %}">Запит на навчання</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'services' %}">Послуги</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'prices' %}">Ціни</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'reviews' %}">Відгуки</a>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="{% url 'booking' %}">Запис на заняття і наявні місця</a>
-          </li> -->
-          
-          <!-- {% if user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'create' %}">Create</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'profile' user.id %}">Profile</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-primary" href="{% url 'logout' %}">Logout</a>
-          </li>
-          {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'signin' %}"><i class="fa fa-user"></i></a>
-          </li>
-          {% endif %} -->
         </ul>
       </div>
     </div>
   </nav>
 </header>
-
-<!-- Page Content -->
-<!-- Banner Starts Here -->
-<div class="main-banner header-text">
-  <div class="container-fluid">
-    <div class="owl-banner owl-carousel">
-
-    </div>
-  </div>
-</div>
-<!-- Banner Ends Here -->

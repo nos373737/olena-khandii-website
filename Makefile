@@ -1,23 +1,36 @@
-# Simple Makefile example
+PYTHON ?= python3
+VENV := venv
+VENV_PYTHON := $(VENV)/bin/python
+VENV_PIP := $(VENV)/bin/pip
 
-.PHONY: run-webserver
+.PHONY: install-venv install-deps-in-venv install migrate collectstatic test run-dev run-webserver run-webserver-bg
 
-install-venv:
+$(VENV_PYTHON):
 	@echo "Creating virtual environment..."
-	python3 -m venv venv
+	$(PYTHON) -m venv $(VENV)
 
-install-deps-in-venv:
-	@echo "Activating virtual environment..."
-	. venv/bin/activate
+install-venv: $(VENV_PYTHON)
+
+install-deps-in-venv: install-venv requirements.txt
 	@echo "Installing dependencies..."
-	pip install -r requirements.txt
+	$(VENV_PIP) install -r requirements.txt
 
-collectstatic: install-venv install-deps-in-venv
-	python manage.py collectstatic --noinput
+install: install-deps-in-venv
 
-run-webserver: collectstatic
-	gunicorn myproject.wsgi:application -c gunicorn_config.py
+migrate: install
+	$(VENV_PYTHON) manage.py migrate
 
-# If we want to run as a background process
-run-webserver-bg: collectstatic
-	nohup gunicorn myproject.wsgi:application --bind 0.0.0.0:8000 --workers 3 > gunicorn.log 2>&1 &
+collectstatic: install
+	$(VENV_PYTHON) manage.py collectstatic --noinput
+
+test: install
+	$(VENV_PYTHON) manage.py test
+
+run-dev: migrate
+	$(VENV_PYTHON) manage.py runserver 0.0.0.0:8000
+
+run-webserver: migrate collectstatic
+	$(VENV)/bin/gunicorn myproject.wsgi:application -c gunicorn_config.py
+
+run-webserver-bg: migrate collectstatic
+	nohup $(VENV)/bin/gunicorn myproject.wsgi:application --bind 0.0.0.0:8000 --workers 3 > gunicorn.log 2>&1 &
