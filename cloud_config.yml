@@ -1,35 +1,120 @@
 #cloud-config
 
+package_update: true
+package_upgrade: false
+
 packages:
+  - build-essential
+  - certbot
+  - git
+  - libjpeg-dev
+  - nginx
   - python3
+  - python3-certbot-nginx
+  - python3-dev
   - python3-pip
   - python3-venv
-  - git
+  - tesseract-ocr
   - ufw
-  - nginx
-  - certbot
-  - python3-certbot-nginx
+  - zlib1g-dev
+
+write_files:
+  - path: /etc/systemd/system/olena-khandii.service
+    owner: root:root
+    permissions: "0644"
+    content: |
+      [Unit]
+      Description=Olena Khandii Django website
+      After=network-online.target
+      Wants=network-online.target
+
+      [Service]
+      Type=exec
+      User=www-data
+      Group=www-data
+      WorkingDirectory=/opt/website
+      EnvironmentFile=/etc/olena-khandii.env
+      ExecStart=/opt/website/venv/bin/gunicorn myproject.wsgi:application -c /opt/website/gunicorn_config.py
+      Restart=always
+      RestartSec=5
+
+      [Install]
+      WantedBy=multi-user.target
+
+  - path: /usr/local/sbin/deploy-olena-khandii.sh
+    owner: root:root
+    permissions: "0755"
+    content: |
+      #!/usr/bin/env bash
+      set -euxo pipefail
+
+      APP_DIR=/opt/website
+      REPO_URL=https://github.com/nos373737/olena-khandii-website.git
+      ENV_FILE=/etc/olena-khandii.env
+      NGINX_SITE=/etc/nginx/sites-available/olenakhandii
+
+      if [ -d "${APP_DIR}/.git" ]; then
+        git -C "${APP_DIR}" pull --ff-only
+      else
+        rm -rf "${APP_DIR}"
+        git clone "${REPO_URL}" "${APP_DIR}"
+      fi
+
+      cd "${APP_DIR}"
+
+      python3 -m venv "${APP_DIR}/venv"
+      "${APP_DIR}/venv/bin/python" -m pip install --upgrade pip wheel
+      "${APP_DIR}/venv/bin/pip" install -r requirements.txt
+
+      if [ ! -f "${ENV_FILE}" ]; then
+        umask 077
+        {
+          echo "DJANGO_DEBUG=False"
+          echo "DJANGO_ALLOWED_HOSTS=olenakhandii.com,www.olenakhandii.com,136.244.84.166,localhost,127.0.0.1"
+          printf "DJANGO_SECRET_KEY="
+          python3 -c "from secrets import token_urlsafe; print(token_urlsafe(50))"
+        } > "${ENV_FILE}"
+      fi
+
+      set -a
+      # shellcheck disable=SC1090
+      . "${ENV_FILE}"
+      set +a
+
+      "${APP_DIR}/venv/bin/python" manage.py migrate --noinput
+      "${APP_DIR}/venv/bin/python" manage.py collectstatic --noinput
+
+      install -m 0644 "${APP_DIR}/nginx.conf" "${NGINX_SITE}"
+      rm -f /etc/nginx/sites-enabled/default
+      ln -sfn "${NGINX_SITE}" /etc/nginx/sites-enabled/olenakhandii
+      nginx -t
+
+      chown -R www-data:www-data "${APP_DIR}"
+
+      systemctl daemon-reload
+      systemctl enable --now nginx
+      systemctl enable --now olena-khandii.service
+      systemctl reload nginx
+
+      if certbot --nginx \
+        -d olenakhandii.com \
+        -d www.olenakhandii.com \
+        --non-interactive \
+        --agree-tos \
+        --redirect \
+        -m nosandriy@gmail.com; then
+        nginx -t
+        systemctl reload nginx
+      else
+        echo "Certbot failed or DNS is not ready. Run this command manually after DNS points to the server:" >&2
+        echo "certbot --nginx -d olenakhandii.com -d www.olenakhandii.com --redirect" >&2
+      fi
 
 runcmd:
-  # Configure firewall
-  - [ ufw, --force, enable ]
-  - [ ufw, allow, ssh ]
-  - [ ufw, allow, 80/tcp ]
-  - [ ufw, allow, 443/tcp ]
-  # Pull the code and set up the website
-  - [ git, clone, "https://github.com/nos373737/olena-khandii-website.git", "/opt/website" ]
-  - [ cp, /opt/website/nginx.conf, /etc/nginx/sites-available/olenakhandii ]
-  - [ rm, -f, /etc/nginx/sites-enabled/default ]
-  - [ ln, -sf, "/etc/nginx/sites-available/olenakhandii", "/etc/nginx/sites-enabled/" ]
-  - [ nginx, -t ]
-  - [ systemctl, restart, nginx ]
-  - [ certbot, --nginx, -d, olenakhandii.com, -d, www.olenakhandii.com, --non-interactive, --agree-tos, -m, nosandriy@gmail.com ]
-  - [ nginx, -t ]
-  - [ systemctl, restart, nginx ]
-  - [ cd, "/opt/website" ]
-  - [ python3, -m, venv, venv ]
-  - [ ., venv/bin/activate ]
-  - [ /opt/website/venv/bin/pip, install, -r, requirements.txt ]
-  - [ /opt/website/venv/bin/python, manage.py, collectstatic, --noinput ]
-  # Start the application
-  - [ /opt/website/venv/bin/gunicorn, myproject.wsgi:application, --bind, "0.0.0.0:8000", --workers, "3", --daemon ]
+  - [ufw, allow, 22/tcp]
+  - [ufw, allow, 80/tcp]
+  - [ufw, allow, 443/tcp]
+  - [ufw, --force, enable]
+  - [bash, -lc, "/usr/local/sbin/deploy-olena-khandii.sh > /var/log/olena-khandii-deploy.log 2>&1"]
+
+final_message: "Olena Khandii website cloud-init finished. Deployment log: /var/log/olena-khandii-deploy.log"
