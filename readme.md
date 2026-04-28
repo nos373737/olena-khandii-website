@@ -7,6 +7,9 @@ Personal Django website for an English teacher. The site is designed to work as 
 - Python / Django
 - SQLite for local development
 - Bootstrap 4 vendor assets plus custom CSS
+- Django Unfold for the admin interface
+- django-import-export and django-tinymce for content management
+- django-axes for admin login throttling
 - Gunicorn for production-style serving
 - WhiteNoise for static files
 
@@ -29,7 +32,7 @@ http://127.0.0.1:8000/
 Open the Django admin at:
 
 ```text
-http://127.0.0.1:8000/admin/
+http://127.0.0.1:8000/studio/
 ```
 
 Create an admin user when needed:
@@ -100,6 +103,41 @@ Starts Gunicorn in the background and writes output to `gunicorn.log`.
 2. Add blog posts with title, category, content, and image.
 3. Use the public blog page to validate how posts appear.
 4. Keep service, pricing, rules, and review pages updated as the business offer changes.
+
+## Admin Configuration
+
+The admin runs on Django Unfold and is configured for editorial work:
+
+- `/studio/` replaces the default `/admin/` path.
+- Blog, category, comment, and contact models support CSV/XLSX import/export.
+- Blog content uses TinyMCE in the admin editor.
+- Failed login attempts are throttled by django-axes when `DEBUG=False`.
+
+The admin URL is configurable through `DJANGO_ADMIN_URL`.
+
+```bash
+DJANGO_ADMIN_URL=studio/
+```
+
+Useful production security environment variables:
+
+```bash
+DJANGO_DEBUG=False
+DJANGO_AXES_ENABLED=True
+DJANGO_AXES_FAILURE_LIMIT=5
+DJANGO_AXES_COOLOFF_HOURS=1
+DJANGO_SECURE_SSL_REDIRECT=True
+DJANGO_SECURE_HSTS_SECONDS=3600
+```
+
+After installing or deploying these dependencies, run:
+
+```bash
+make migrate
+make collectstatic
+```
+
+Use a non-default admin path in production, keep `DEBUG=False`, and serve admin only over HTTPS.
 
 ## Frontend Direction
 

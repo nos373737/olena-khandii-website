@@ -70,11 +70,34 @@ write_files:
         umask 077
         {
           echo "DJANGO_DEBUG=False"
+          echo "DJANGO_ADMIN_URL=studio/"
+          echo "DJANGO_AXES_ENABLED=True"
+          echo "DJANGO_AXES_FAILURE_LIMIT=5"
+          echo "DJANGO_AXES_COOLOFF_HOURS=1"
+          echo "DJANGO_SECURE_SSL_REDIRECT=True"
+          echo "DJANGO_SECURE_HSTS_SECONDS=3600"
           echo "DJANGO_ALLOWED_HOSTS=olenakhandii.com,www.olenakhandii.com,136.244.84.166,localhost,127.0.0.1"
+          echo "DJANGO_CSRF_TRUSTED_ORIGINS=https://olenakhandii.com,https://www.olenakhandii.com"
           printf "DJANGO_SECRET_KEY="
           python3 -c "from secrets import token_urlsafe; print(token_urlsafe(50))"
         } > "${ENV_FILE}"
       fi
+
+      ensure_env_var() {
+        key="$1"
+        value="$2"
+        if ! grep -q "^${key}=" "${ENV_FILE}"; then
+          echo "${key}=${value}" >> "${ENV_FILE}"
+        fi
+      }
+
+      ensure_env_var "DJANGO_ADMIN_URL" "studio/"
+      ensure_env_var "DJANGO_AXES_ENABLED" "True"
+      ensure_env_var "DJANGO_AXES_FAILURE_LIMIT" "5"
+      ensure_env_var "DJANGO_AXES_COOLOFF_HOURS" "1"
+      ensure_env_var "DJANGO_SECURE_SSL_REDIRECT" "True"
+      ensure_env_var "DJANGO_SECURE_HSTS_SECONDS" "3600"
+      ensure_env_var "DJANGO_CSRF_TRUSTED_ORIGINS" "https://olenakhandii.com,https://www.olenakhandii.com"
 
       set -a
       # shellcheck disable=SC1090

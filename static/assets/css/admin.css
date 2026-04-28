@@ -1,0 +1,94 @@
+:root {
+  --primary: #151515;
+  --secondary: #1f4fff;
+  --accent: #a7f0d4;
+  --primary-fg: #ffffff;
+  --body-bg: #f7f5f1;
+  --body-fg: #151515;
+  --body-quiet-color: #67625f;
+  --hairline-color: #e7e2dc;
+  --border-color: #e7e2dc;
+  --link-fg: #1f4fff;
+  --link-hover-color: #1232a4;
+  --button-bg: #1f4fff;
+  --button-hover-bg: #1232a4;
+  --default-button-bg: #151515;
+  --default-button-hover-bg: #333333;
+}
+
+#header {
+  box-shadow: 0 12px 30px rgba(21, 21, 21, .08);
+}
+
+#site-name a {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.admin-brand-title {
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.admin-brand-subtitle {
+  color: rgba(255, 255, 255, .68);
+  font-size: 11px;
+  font-weight: 700;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.admin-public-link {
+  border: 1px solid rgba(255, 255, 255, .22);
+  border-radius: 999px;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 7px 12px;
+}
+
+.admin-public-link:hover {
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+#content-main,
+.module,
+.inline-group {
+  border-radius: 8px;
+}
+
+.module h2,
+.module caption,
+.inline-group h2 {
+  font-weight: 800;
+}
+
+#changelist-filter {
+  border-radius: 8px;
+}
+
+#changelist table thead th {
+  font-weight: 800;
+}
+
+.admin-thumb {
+  width: 72px;
+  height: 54px;
+  border-radius: 6px;
+  object-fit: cover;
+}
+
+.admin-preview {
+  max-width: 360px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+textarea {
+  font-family: inherit;
+}

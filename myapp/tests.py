@@ -1,5 +1,6 @@
 from django.test import TestCase, Client
 from django.contrib.auth.models import User
+from django.urls import reverse
 from .models import Post, Category, Comment, Contact
 
 class CategoryModelTest(TestCase):
@@ -108,3 +109,23 @@ class ViewsTest(TestCase):
         )
         self.assertEqual(response.status_code, 302)  # Redirect after creation
         self.assertTrue(Post.objects.filter(postname="New Post").exists())
+
+
+class AdminRoutingTest(TestCase):
+    def setUp(self):
+        self.client = Client()
+        self.staff = User.objects.create_superuser(
+            username="admin",
+            email="admin@example.com",
+            password="password",
+        )
+
+    def test_admin_uses_configured_studio_path(self):
+        self.client.login(username="admin", password="password")
+        response = self.client.get("/studio/")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(reverse("admin:index"), "/studio/")
+
+    def test_default_admin_path_is_not_exposed(self):
+        response = self.client.get("/admin/")
+        self.assertEqual(response.status_code, 404)
