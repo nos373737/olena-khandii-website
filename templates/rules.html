@@ -1,139 +1,139 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="TemplateMo">
-  <link
-    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
-    rel="stylesheet">
-
-  <title>Правила</title>
-
-  <!-- Bootstrap core CSS -->
+  <meta name="description" content="Правила співпраці, оплати, скасування та перенесення занять з Olena Khandii.">
+  <title>Правила & оплата | Olena Khandii</title>
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-
-  <!-- Additional CSS Files -->
   <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-
-    <style>
-    .services-section { background:#ffffff; position:relative; padding-top:2.5rem; padding-bottom:3.5rem; }
-    .services-card {
-      background:#fff;
-      border:1px solid #eee;
-      border-radius:16px;
-      box-shadow:0 6px 20px -5px rgba(0,0,0,.08);
-      transition:box-shadow .25s ease;
-      padding:2.2rem 2.2rem 2.6rem;
-      font-family:'Roboto',sans-serif;
-    }
-    .services-card:hover { box-shadow:0 10px 28px -6px rgba(0,0,0,.12); }
-    .services-card h2 { color:#0e0af3; font-weight:600; line-height:1.05; font-size:2.2rem; margin-bottom:1.8rem; text-align:center; }
-    .services-card ul { margin:0 0 1.1rem; padding-left:1.15rem; }
-    .services-card li { line-height:1.55; }
-    .services-card strong { font-weight:600; }
-    .services-card em { color:#444; }
-    .services-card .danger-note { color:#dc3545; font-weight:600; }
-    @media (max-width:575.98px){
-      .services-card { padding:1.4rem 1.15rem 1.8rem; }
-      .services-card h2 { font-size:1.65rem; }
-    }
-  </style>
-
 </head>
 
 <body>
+  {% include 'header.html' %}
 
-  {%include 'header.html'%}
+  <main>
+    <section class="page-hero compact">
+      <div class="container">
+        <p class="eyebrow">Rules</p>
+        <h1>Правила співпраці без двозначностей</h1>
+        <p>Ці правила допомагають берегти час, стабільність графіка і якість роботи. Ознайомтесь з ними до початку навчання.</p>
+      </div>
+    </section>
 
-  <!-- About my rules content part -->
-    <section class="services-section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-9">
-          <div class="services-card">
-            <h2 style="color:#0e0af3; font-size:2.4rem; line-height:1.0;">Правила</h2>
-            <ul class="list-unstyled">
-              <li class="mb-3">
-                <strong>Групове заняття</strong> скасовується лише якщо його відмінили <u>усі учасники групи більше ніж за 12 годин до початку</u>.
-              </li>
-              <li class="mb-3">
-                Якщо один з учасників не може бути присутнім, він отримує <strong>запис заняття</strong>, виконує завдання самостійно і може задавати питання в тг.<br>
-                <span class="danger-note">Оплата за таке заняття списується.</span>
-              </li>
-              <li class="mb-3">
-                <em>Не стосується відпустки, про яку попереджено заздалегідь.</em>
-              </li>
-              <li class="mb-3">
-                <strong>ВИНЯТКИ, коли оплата не списується:</strong>
-                <ul>
-                  <li>смерть близьких родичів</li>
-                  <li>прямі наслідки атак</li>
-                  <li>раптове тяжке захворювання</li>
-                  <li>ДТП</li>
-                </ul>
-              </li>
-              <li class="mb-3">
-                <strong>Для студентів:</strong>
-                <ul>
-                  <li><u>2 рази на тиждень</u> — оплата мінімум <strong>4 занять наперед</strong>.</li>
-                  <li><u>1 раз на тиждень</u> — оплата мінімум <strong>2 занять наперед</strong>.</li>
-                </ul>
-              </li>
-              <li class="mb-3">
-                Облік занять ведеться в окремому файлі. Після кожного заняття ставите свій підпис (ім'я і прізвище) для підтвердження наданої послуги та контролю оплат.
-              </li>
-              <li class="mb-0">
-                <span class="danger-note">Якщо оплати немає за 24 години до початку — заняття автоматично скасовується, слот відкривається для інших.</span><br>
-                Давайте цінувати час один одного.
-              </li>
-            </ul>
+    <section class="section-strip">
+      <div class="container">
+        <div class="strip-grid">
+          <div>
+            <span class="metric">24h</span>
+            <span>оплата до початку заняття</span>
+          </div>
+          <div>
+            <span class="metric">12h</span>
+            <span>групова відміна заздалегідь</span>
+          </div>
+          <div>
+            <span class="metric">2-4 lessons</span>
+            <span>мінімальна передоплата</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Cooperation</p>
+          <h2>Як працюють правила</h2>
+        </div>
+
+        <div class="rules-grid">
+          <article class="rule-card primary">
+            <span class="offer-index">01</span>
+            <h3>Оплата</h3>
+            <p>Для студентів, які займаються 2 рази на тиждень, оплата мінімум 4 занять наперед. Для студентів, які займаються 1 раз на тиждень, оплата мінімум 2 занять наперед.</p>
+          </article>
+
+          <article class="rule-card">
+            <span class="offer-index">02</span>
+            <h3>Підтвердження занять</h3>
+            <p>Облік занять ведеться в окремому файлі. Після кожного заняття студент ставить підпис: ім'я і прізвище для підтвердження наданої послуги та контролю оплат.</p>
+          </article>
+
+          <article class="rule-card warning">
+            <span class="offer-index">03</span>
+            <h3>Без оплати слот відкривається</h3>
+            <p>Якщо оплати немає за 24 години до початку, заняття автоматично скасовується, а слот відкривається для інших.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section soft-section">
+      <div class="container">
+        <div class="rules-layout">
+          <div class="rules-panel">
+            <p class="eyebrow">Group lessons</p>
+            <h2>Правила групового заняття</h2>
+            <div class="rule-line">
+              <strong>Групове заняття скасовується лише якщо його відмінили усі учасники групи більше ніж за 12 годин до початку.</strong>
+            </div>
+            <div class="rule-line">
+              <p>Якщо один з учасників не може бути присутнім, він отримує запис заняття, виконує завдання самостійно і може задавати питання в Telegram.</p>
+              <span class="rule-alert">Оплата за таке заняття списується.</span>
+            </div>
+            <div class="rule-line">
+              <p>Це не стосується відпустки, про яку попереджено заздалегідь.</p>
+            </div>
+          </div>
+
+          <aside class="rules-panel dark">
+            <p class="eyebrow">Exceptions</p>
+            <h2>Коли оплата не списується</h2>
+            <ul class="clean-list inverted">
+              <li>Смерть близьких родичів.</li>
+              <li>Прямі наслідки атак.</li>
+              <li>Раптове тяжке захворювання.</li>
+              <li>ДТП.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="rules-summary">
+          <div>
+            <p class="eyebrow">Mutual respect</p>
+            <h2>Давайте цінувати час один одного.</h2>
+          </div>
+          <p>Правила зобов'язують обидві сторони: студент має стабільний процес і зрозумілі умови, а викладач може якісно планувати графік, матеріали та фідбек.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-content">
+          <p class="eyebrow">Ready</p>
+          <h2>Якщо правила підходять, можна переходити до формату.</h2>
+          <p>Подивіться послуги або ціни, щоб обрати найкращий старт для вашої цілі.</p>
+          <a href="{% url 'services' %}" class="btn btn-light">Перейти до послуг</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   {% include 'footer.html' %}
 
-  <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-    crossorigin="anonymous"></script>
-
-  <!-- Additional Scripts -->
   <script src="{% static 'assets/js/custom.js' %}"></script>
-  <script src="{% static 'assets/js/owl.js' %}"></script>
-  <script src="{% static 'assets/js/slick.js' %}"></script>
-  <script src="{% static 'assets/js/isotope.js' %}"></script>
-  <script src="{% static 'assets/js/accordions.js' %}"></script>
-
-  <script language="text/Javascript">
-    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-    function clearField(t) {                   //declaring the array outside of the
-      if (!cleared[t.id]) {                      // function makes it static and global
-        cleared[t.id] = 1;  // you could use true and false, but that's more typing
-        t.value = '';         // with more chance of typos
-        t.style.color = '#fff';
-      }
-    }
-  </script>
-
 </body>
 
 </html>

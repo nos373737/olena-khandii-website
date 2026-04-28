@@ -1,130 +1,131 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="TemplateMo">
-  <link
-    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
-    rel="stylesheet">
-
-  <title>Послуги</title>
-
-  <!-- Bootstrap core CSS -->
+  <meta name="description" content="Ціни на індивідуальні, парні та групові заняття англійською з Olena Khandii.">
+  <title>Ціни | Olena Khandii</title>
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-
-  <!-- Additional CSS Files -->
   <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-
-
 </head>
 
 <body>
+  {% include 'header.html' %}
 
-  {%include 'header.html'%}
+  <main>
+    <section class="page-hero compact">
+      <div class="container">
+        <p class="eyebrow">Pricing</p>
+        <h1>Прозорі ціни без прихованих умов</h1>
+        <p>Оплата залежить від формату і запиту. Перше заняття оплачується разово, а подальша співпраця проходить за правилами оплати та переносів.</p>
+      </div>
+    </section>
 
-  <!-- About my prices content part -->
-  <div class="container py-5">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 col-md-10">
-        <h2 class="mb-4 fw-bold text-primary">Ціни</h2>
-        <ul class="list-group mb-4">
-          <li class="list-group-item d-flex flex-column flex-sm-row justify-content-between align-items-sm-center">
-            <div>
-              <strong>Індивідуальне заняття — загальний запит</strong><br>
-              <small class="text-muted">загальна англійська, бізнес-англійська</small>
-            </div>
-            <span class="mt-2 mt-sm-0 badge bg-primary fs-6">22$</span>
-          </li>
-          <li class="list-group-item d-flex flex-column flex-sm-row justify-content-between align-items-sm-center">
-            <div>
-              <strong>Індивідуальне заняття — особливий запит</strong><br>
-              <small class="text-muted">підготовка до співбесіди / презентації, іспиту, тощо</small>
-            </div>
-            <span class="mt-2 mt-sm-0 badge bg-primary fs-6">25$</span>
-          </li>
-          <li class="list-group-item d-flex flex-column flex-sm-row justify-content-between align-items-sm-center">
-            <div>
-              <strong>Парне заняття</strong><br>
-              <small class="text-muted">2 людини</small>
-            </div>
-            <span class="mt-2 mt-sm-0 badge bg-primary fs-6">15$ / людина</span>
-          </li>
-          <li class="list-group-item d-flex flex-column flex-sm-row justify-content-between align-items-sm-center">
-            <div>
-              <strong>Міні-група</strong><br>
-              <small class="text-muted">максимум 4 людини</small>
-            </div>
-            <span class="mt-2 mt-sm-0 badge bg-primary fs-6">12$ / людина</span>
-          </li>
-        </ul>
-
-        <div class="small px-3 py-3 rounded-3 shadow-sm" style="background:rgba(0,123,255,0.08); border-left:4px solid var(--bs-primary); color:#2a2a2a;">
-          Оплата здійснюється в гривнях за актуальним курсом на момент здійснення оплати на рахунок ФОП.
-        </div>
-        <div class="alert alert-info d-flex flex-column flex-md-row align-items-start gap-3 shadow-sm rounded-3 p-4 mt-4"
-             style="background:linear-gradient(135deg, rgba(13,110,253,.12), rgba(13,110,253,.05));">
-          <div class="flex-shrink-0">
-            <span class="d-inline-flex justify-content-center align-items-center rounded-circle bg-primary bg-opacity-25"
-            style="width:56px;height:56px;">
-              <i class="fa fa-info-circle text-primary fs-3" aria-hidden="true"></i>
-            </span>
+    <section class="section-strip">
+      <div class="container">
+        <div class="strip-grid">
+          <div>
+            <span class="metric">22$</span>
+            <span>індивідуальний загальний запит</span>
           </div>
-          <div class="flex-grow-1">
-            <h6 class="fw-bold text-primary mb-2">Оплата першого заняття</h6>
-            <p class="mb-3 mb-md-2">
-              Перше заняття оплачується разово.<br>
-              Як оплачуються усі наступні, читай за посиланням:
-            </p>
-            <div class="d-flex flex-wrap gap-2">
-              <a href="{% url 'rules' %}" class="btn btn-sm btn-outline-primary px-3">Детальні правила</a>
-            </div>
+          <div>
+            <span class="metric">25$</span>
+            <span>іспит, співбесіда, презентація</span>
+          </div>
+          <div>
+            <span class="metric">12-15$</span>
+            <span>парні та міні-групові заняття</span>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading section-heading-row">
+          <div>
+            <p class="eyebrow">Formats</p>
+            <h2>Вартість занять</h2>
+          </div>
+          <a href="{% url 'rules' %}" class="text-link">Правила & оплата</a>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="price-card">
+            <span class="tag">1:1</span>
+            <h3>Індивідуальне заняття</h3>
+            <p>Загальна англійська або Business English з персональним планом і стабільним фокусом.</p>
+            <div class="price-value">22$</div>
+            <span class="price-note">за заняття</span>
+          </article>
+
+          <article class="price-card featured">
+            <span class="tag">special request</span>
+            <h3>Особливий запит</h3>
+            <p>Підготовка до співбесіди, презентації, іспиту або іншого завдання з конкретним дедлайном.</p>
+            <div class="price-value">25$</div>
+            <span class="price-note">за заняття</span>
+          </article>
+
+          <article class="price-card">
+            <span class="tag">pair</span>
+            <h3>Парне заняття</h3>
+            <p>Формат для двох студентів зі схожим рівнем, темпом і навчальною ціллю.</p>
+            <div class="price-value">15$</div>
+            <span class="price-note">за людину</span>
+          </article>
+
+          <article class="price-card">
+            <span class="tag">mini group</span>
+            <h3>Міні-група</h3>
+            <p>До 4 людей. Більше взаємодії, більше говоріння, нижча ціна за заняття.</p>
+            <div class="price-value">12$</div>
+            <span class="price-note">за людину</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section soft-section">
+      <div class="container">
+        <div class="payment-layout">
+          <div class="payment-panel">
+            <p class="eyebrow">Payment</p>
+            <h2>Оплата в гривнях</h2>
+            <p>Оплата здійснюється в гривнях за актуальним курсом на момент здійснення оплати на рахунок ФОП.</p>
+          </div>
+
+          <div class="payment-panel dark">
+            <p class="eyebrow">First lesson</p>
+            <h2>Перше заняття оплачується разово</h2>
+            <p>Як оплачуються усі наступні заняття, читайте в правилах співпраці. Там описані оплата, відміни та переноси.</p>
+            <a href="{% url 'rules' %}" class="btn btn-light">Детальні правила</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-content">
+          <p class="eyebrow">Booking</p>
+          <h2>Готові обрати формат?</h2>
+          <p>Напишіть запит, рівень і ціль. Далі стане зрозуміло, який формат буде найкращим стартом.</p>
+          <a href="{% url 'contact' %}" class="btn btn-light">Написати запит</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   {% include 'footer.html' %}
 
-  <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-    crossorigin="anonymous"></script>
-
-  <!-- Additional Scripts -->
   <script src="{% static 'assets/js/custom.js' %}"></script>
-  <script src="{% static 'assets/js/owl.js' %}"></script>
-  <script src="{% static 'assets/js/slick.js' %}"></script>
-  <script src="{% static 'assets/js/isotope.js' %}"></script>
-  <script src="{% static 'assets/js/accordions.js' %}"></script>
-
-  <script language="text/Javascript">
-    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-    function clearField(t) {                   //declaring the array outside of the
-      if (!cleared[t.id]) {                      // function makes it static and global
-        cleared[t.id] = 1;  // you could use true and false, but that's more typing
-        t.value = '';         // with more chance of typos
-        t.style.color = '#fff';
-      }
-    }
-  </script>
-
 </body>
 
 </html>

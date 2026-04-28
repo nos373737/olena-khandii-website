@@ -1,245 +1,199 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="TemplateMo">
-  <link
-    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
-    rel="stylesheet">
-
-  <title>Послуги</title>
-
-  <!-- Bootstrap core CSS -->
+  <meta name="description" content="Формати навчання з Olena Khandii: General English, іспити, співбесіди, Business English та асинхронний формат.">
+  <title>Послуги | Olena Khandii</title>
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-
-  <!-- Additional CSS Files -->
   <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-
-  <style>
-    .services-section { background:#ffffff; position:relative; padding-top:2.5rem; padding-bottom:3.5rem; }
-    .services-card {
-      background:#fff;
-      border:1px solid #eee;
-      border-radius:16px;
-      box-shadow:0 6px 20px -5px rgba(0,0,0,.08);
-      transition:box-shadow .25s ease;
-      padding:2.2rem 2.2rem 2.6rem;
-      font-family:'Roboto', sans-serif;
-    }
-    .services-card:hover { box-shadow:0 10px 28px -6px rgba(0,0,0,.12); }
-    .services-card h3,
-    .services-card h2 { color:#0e0af3; font-weight:600; line-height:1.05; }
-    .services-divider { border-top:1px solid #e5e5e5; margin:2.4rem 0 2.0rem; }
-    .services-block + .services-block { margin-top:2.6rem; }
-    .services-card ul { margin:0 0 .9rem; padding-left:1.15rem; }
-    .services-card ul ul { margin-top:.45rem; }
-    .services-card li { line-height:1.55; }
-    .services-card p, .services-card h4, .services-card h5 { line-height:1.5; margin-bottom:.9rem; }
-    .services-card h5 { font-weight:600; color:#222; }
-    .services-accent { background:rgb(14,10,243); color:#fff; display:inline-block; padding:.40rem .75rem; border-radius:10px; font-size:.75rem; letter-spacing:.5px; margin-bottom:1rem; }
-     /* Extra mobile refinements (kept local to this section) */
-      @media (max-width:575.98px){
-        .services-card{padding:1.25rem 1rem 1.6rem;}
-        .services-block + .services-block{margin-top:2.1rem;}
-        .services-card h3{font-size:1.30rem;margin-bottom:.55rem;}
-        .services-card h5{font-size:.95rem;margin-bottom:.45rem;}
-        .services-card p,
-        .services-card li{font-size:.92rem;}
-        .services-card ul{padding-left:1rem;}
-      }
-      .services-card ul{list-style:disc;}
-      .services-card ul ul{list-style:circle;}
-      .services-card li{margin-bottom:.35rem;}
-  </style>
-
 </head>
 
 <body>
+  {% include 'header.html' %}
 
-  {%include 'header.html'%}
+  <main>
+    <section class="page-hero compact">
+      <div class="container">
+        <p class="eyebrow">Services</p>
+        <h1>Формати навчання під вашу реальну ціль</h1>
+        <p>Без випадкових тем і занять “про все”. Ми визначаємо запит, рівень, формат роботи і рухаємося до результату послідовно.</p>
+      </div>
+    </section>
 
-  <!-- About my services content part -->
-  <section class="services-section">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-9">
-          <div class="services-card">
-
-            <span class="services-accent d-inline-block">ОСНОВНІ НАПРЯМКИ</span>
-
-            <!-- General English -->
-            <div class="services-block">
-              <h3 class="fw-semibold">General English</h3>
-              <h5>Які рівні?</h5>
-              <p class="mb-2">A1-C2</p>
-              <h5>Яка ваша мета?</h5>
-              <ul class="mb-3">
-                <li>
-                  Довгострокова: ви хочете вчити англійську, щоб могти говорити в різних ситуаціях:
-                  <ul class="mt-2">
-                    <li>В подорожах</li>
-                    <li>В навчанні</li>
-                    <li>На роботі</li>
-                  </ul>
-                </li>
-              </ul>
-              <h5>Який результат?</h5>
-              <ul class="mb-3">
-                <li>Розширюєте словниковий запас на загальні теми (чим вище рівень, тим абстрактніші теми)</li>
-                <li>Підтягуєте граматику</li>
-                <li>Долаєте свій страх говоріння</li>
-                <li>Починаєте або впевненіше використовуєте автентику: книги, серіали і т.д.</li>
-              </ul>
-              <h5>Який формат?</h5>
-              <ul class="mb-0">
-                <li>Індивідуальні / парні / групові</li>
-              </ul>
-            </div>
-
-            <div class="services-divider"></div>
-
-            <!-- Exam Prep -->
-            <div class="services-block">
-              <h3 class="fw-semibold">Підготовка до ІСПИТІВ</h3>
-              <h5>Спеціалізація:</h5>
-              <p class="mb-2">IELTS, PTE, CELPIP, НМТ, ЄВІ</p>
-              <h5>Які рівні?</h5>
-              <p class="mb-2">Ви повинні знати бал, на який розраховуєте. Якщо ваша англійська не відповідає цьому рівню, спочатку працюємо над <em>General English</em>, потім переходимо до підготовки.</p>
-              <h5>Яка мета?</h5>
-              <ul class="mb-3">
-                <li>Вступ до університету за кордоном</li>
-                <li>Переїзд за кордон</li>
-                <li>Пошук роботи за кордоном</li>
-              </ul>
-              <h5>Який результат?</h5>
-              <ul class="mb-3">
-                <li>Чітке розуміння структури іспиту</li>
-                <li>Покращення навичок читання, письма, слухання та говоріння</li>
-              </ul>
-              <h5>Скільки часу потрібно?</h5>
-              <p class="mb-0">Дуже індивідуально. Але точно не тиждень і не рік :)</p>
-            </div>
-
-            <div class="services-divider"></div>
-
-            <!-- Interview Prep -->
-            <div class="services-block">
-              <h3 class="fw-semibold">Підготовка до співбесіди</h3>
-              <h5>Які рівні?</h5>
-              <p class="mb-2">B1-C2</p>
-              <h5>Яка мета?</h5>
-              <ul class="mb-3">
-                <li>Впевнено відповідати на питання інтерв'юера англійською</li>
-                <li>Рефлексія над власним досвідом роботи</li>
-              </ul>
-              <h5>Який результат?</h5>
-              <ul class="mb-3">
-                <li>Чітке уявлення щодо відповідей на типові питання</li>
-                <li>Покращення навичок самопрезентації</li>
-              </ul>
-              <h5>Скільки часу потрібно?</h5>
-              <p class="mb-0">В середньому 2–5 занять.</p>
-            </div>
-
-            <div class="services-divider"></div>
-
-            <!-- Business English -->
-            <div class="services-block">
-              <h3 class="fw-semibold">Business English</h3>
-              <h5>Які рівні?</h5>
-              <p class="mb-2">C1</p>
-              <h5>Яка ваша мета?</h5>
-              <ul class="mb-3">
-                <li>Ви використовуєте або скоро будете використовувати англійську на роботі</li>
-                <li>Потрібна участь у мітингах, колах, презентаціях</li>
-              </ul>
-              <h5>Про курс:</h5>
-              <p class="mb-2">Курс не про конкретну сферу, а про універсальні навички комунікації.</p>
-              <h5>Який результат?</h5>
-              <ul class="mb-0">
-                <li>Розширюєте робочий словниковий запас</li>
-                <li>Підтягуєте граматику</li>
-                <li>Комунікуєте впевнено та ефективно</li>
-              </ul>
-            </div>
-
-            <div class="services-divider"></div>
-
-            <!-- Asynchronous -->
-            <div class="services-block">
-              <h3 class="fw-semibold">Англійська в асинхронному форматі</h3>
-              <h5>Які рівні?</h5>
-              <p class="mb-2">B2-C1</p>
-              <h5>Яка ваша мета?</h5>
-              <ul class="mb-3">
-                <li>
-                  Точково попрацювати над конкретним запитом:
-                  <ul class="mt-2">
-                    <li>Підготувати виступ / презентацію</li>
-                    <li>Розширити словниковий запас на певну тему</li>
-                    <li>Попрацювати над вашим Writing</li>
-                  </ul>
-                </li>
-              </ul>
-              <h5>Яка ваша проблема?</h5>
-              <ul class="mb-3">
-                <li>Немає стабільного часу для занять</li>
-              </ul>
-              <h5>Як вирішуємо?</h5>
-              <ul class="mb-0">
-                <li>Я надсилаю завдання та time frame</li>
-                <li>Ви виконуєте та надсилаєте</li>
-                <li>Я перевіряю і даю фідбек</li>
-              </ul>
-            </div>
-
+    <section class="section-strip">
+      <div class="container">
+        <div class="strip-grid">
+          <div>
+            <span class="metric">A1-C1</span>
+            <span>рівні, з якими працюємо</span>
+          </div>
+          <div>
+            <span class="metric">IELTS / PTE</span>
+            <span>іспити та чіткі дедлайни</span>
+          </div>
+          <div>
+            <span class="metric">1:1 / pairs / groups</span>
+            <span>формати для різних темпів</span>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Choose your track</p>
+          <h2>Основні напрямки</h2>
+        </div>
+
+        <div class="service-path-grid">
+          <article class="service-card featured">
+            <span class="offer-index">01</span>
+            <h3>General English</h3>
+            <p>Для довгострокового розвитку: говоріння, граматика, словник, автентичні матеріали та стабільна практика.</p>
+            <div class="service-meta">
+              <span>A1-C2</span>
+              <span>індивідуально / пари / групи</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="offer-index">02</span>
+            <h3>Іспити</h3>
+            <p>IELTS, PTE, CELPIP, НМТ, ЄВІ. Розбираємо структуру іспиту, навички та стратегію під потрібний бал.</p>
+            <div class="service-meta">
+              <span>goal-based</span>
+              <span>reading / writing / speaking / listening</span>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <span class="offer-index">03</span>
+            <h3>Робота</h3>
+            <p>Business English, співбесіди, презентації та робоча комунікація, де потрібно звучати впевнено і професійно.</p>
+            <div class="service-meta">
+              <span>B1-C2</span>
+              <span>interview / meetings / presentations</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section soft-section">
+      <div class="container">
+        <div class="service-detail-list">
+          <article class="service-detail-card">
+            <div class="service-detail-heading">
+              <span class="tag">General English</span>
+              <h2>Англійська для життя, роботи і подорожей</h2>
+            </div>
+            <div class="service-detail-content">
+              <h3>Для кого</h3>
+              <p>Для студентів, які хочуть говорити в різних ситуаціях: у подорожах, навчанні, на роботі та в повсякденному житті.</p>
+              <h3>Результат</h3>
+              <ul class="clean-list">
+                <li>Розширюєте словниковий запас на загальні та абстрактні теми.</li>
+                <li>Підтягуєте граматику без відірваності від говоріння.</li>
+                <li>Долаєте страх говоріння через регулярну практику.</li>
+                <li>Починаєте впевненіше використовувати книги, серіали й іншу автентику.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-detail-card">
+            <div class="service-detail-heading">
+              <span class="tag">Exam prep</span>
+              <h2>Підготовка до іспитів</h2>
+            </div>
+            <div class="service-detail-content">
+              <h3>Спеціалізація</h3>
+              <p>IELTS, PTE, CELPIP, НМТ, ЄВІ. Якщо рівня ще не вистачає для потрібного балу, спочатку працюємо над General English.</p>
+              <h3>Результат</h3>
+              <ul class="clean-list">
+                <li>Розумієте структуру іспиту і вимоги до відповідей.</li>
+                <li>Покращуєте reading, writing, listening та speaking.</li>
+                <li>Працюєте з дедлайном, балом і персональною стратегією.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-detail-card">
+            <div class="service-detail-heading">
+              <span class="tag">Interview prep</span>
+              <h2>Підготовка до співбесіди</h2>
+            </div>
+            <div class="service-detail-content">
+              <h3>Для кого</h3>
+              <p>Для рівнів B1-C2, коли потрібно впевнено відповідати англійською і нормально презентувати власний досвід.</p>
+              <h3>Фокус</h3>
+              <ul class="clean-list">
+                <li>Типові питання та сильні відповіді без зазубрювання.</li>
+                <li>Самопрезентація, структура думки і робота з досвідом.</li>
+                <li>В середньому потрібно 2-5 занять.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-detail-card">
+            <div class="service-detail-heading">
+              <span class="tag">Business English</span>
+              <h2>Комунікація для роботи</h2>
+            </div>
+            <div class="service-detail-content">
+              <h3>Про курс</h3>
+              <p>Курс не про одну вузьку сферу, а про універсальні навички комунікації для мітингів, презентацій, листування і робочих обговорень.</p>
+              <h3>Результат</h3>
+              <ul class="clean-list">
+                <li>Розширюєте робочий словниковий запас.</li>
+                <li>Комунікуєте точніше, впевненіше та професійніше.</li>
+                <li>Підтягуєте граматику через реальні робочі задачі.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="service-detail-card">
+            <div class="service-detail-heading">
+              <span class="tag">Async format</span>
+              <h2>Англійська в асинхронному форматі</h2>
+            </div>
+            <div class="service-detail-content">
+              <h3>Для кого</h3>
+              <p>Для B2-C1, коли немає стабільного часу для занять, але є конкретний запит: виступ, презентація, writing або словник на певну тему.</p>
+              <h3>Як працюємо</h3>
+              <ul class="clean-list">
+                <li>Я надсилаю завдання і time frame.</li>
+                <li>Ви виконуєте і надсилаєте результат.</li>
+                <li>Я перевіряю, даю фідбек і наступні кроки.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-content">
+          <p class="eyebrow">Next step</p>
+          <h2>Почніть з формату, який відповідає вашій цілі.</h2>
+          <p>Якщо не впевнені, який напрямок обрати, напишіть запит. Я підкажу, що буде найбільш логічним стартом.</p>
+          <a href="{% url 'prices' %}" class="btn btn-light">Подивитись ціни</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   {% include 'footer.html' %}
 
-  <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-    crossorigin="anonymous"></script>
-
-  <!-- Additional Scripts -->
   <script src="{% static 'assets/js/custom.js' %}"></script>
-  <script src="{% static 'assets/js/owl.js' %}"></script>
-  <script src="{% static 'assets/js/slick.js' %}"></script>
-  <script src="{% static 'assets/js/isotope.js' %}"></script>
-  <script src="{% static 'assets/js/accordions.js' %}"></script>
-
-  <script language="text/Javascript">
-    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-    function clearField(t) {                   //declaring the array outside of the
-      if (!cleared[t.id]) {                      // function makes it static and global
-        cleared[t.id] = 1;  // you could use true and false, but that's more typing
-        t.value = '';         // with more chance of typos
-        t.style.color = '#fff';
-      }
-    }
-  </script>
-
 </body>
 
 </html>

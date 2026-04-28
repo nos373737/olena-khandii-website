@@ -1,205 +1,159 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="TemplateMo">
-  <link
-    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
-    rel="stylesheet">
-
-  <title>Послуги</title>
-
-  <!-- Bootstrap core CSS -->
+  <meta name="description" content="Про Olena Khandii: CELTA Pass A English teacher, 13 років досвіду, заняття для дорослих, іспити, Business English і чесний підхід до навчання.">
+  <title>Про мене | Olena Khandii</title>
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-
-  <!-- Additional CSS Files -->
   <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-
-
 </head>
 
 <body>
+  {% include 'header.html' %}
 
-  {%include 'header.html'%}
-  <!-- About myself content part (updated) -->
-  <style>
-    .about-section {
-      background:#ffffff;
-      position:relative;
-    }
-    .about-card {
-      background:#fff;
-      border:1px solid #eee;
-      border-radius:16px;
-      box-shadow:0 6px 20px -5px rgba(0,0,0,.08);
-      transition:box-shadow .25s ease;
-    }
-    .about-card:hover {
-      box-shadow:0 10px 28px -6px rgba(0,0,0,.12);
-    }
-    .about-card h2 {
-      font-weight:600;
-      margin-bottom:1.2rem;
-    }
-    /* Remove decorative squares / icons */
-    .about-list {
-      list-style:none;
-      margin:0;
-      padding:0;
-    }
-    .about-list > li {
-      padding-left:0;
-    }
-    .about-list > li:before {
-      content:none;
-      display:none;
-    }
-    .about-list ul {
-      list-style:disc;
-      padding-left:1.2rem;
-      margin-top:.6rem;
-    }
-    .about-list ul li {
-      padding-left:0;
-      position:static;
-    }
-    .about-list ul li:before {
-      content:none;
-    }
-    .about-divider {
-      border-top:1px solid #e5e5e5;
-      margin:2.2rem 0;
-    }
-    .about-soft-heading {
-      display:inline-block;
-      background:rgb(14, 10, 243);;
-      color:#fff;
-      padding:.45rem .85rem;
-      border-radius:10px;
-      font-size:.85rem;
-      letter-spacing:.5px;
-    }
-    .about-paragraphs p {
-      line-height:1.55;
-      margin-bottom:.9rem;
-    }
-    .fade-in {
-      opacity:0;
-      transform:translateY(18px);
-      animation:fadeIn .6s ease forwards;
-    }
-    .fade-in.delay-1 { animation-delay:.1s; }
-    .fade-in.delay-2 { animation-delay:.2s; }
-    .fade-in.delay-3 { animation-delay:.3s; }
-    .fade-in.delay-4 { animation-delay:.4s; }
-    @keyframes fadeIn {
-      to { opacity:1; transform:translateY(0); }
-    }
-    @media (max-width:575.98px){
-      .about-card { padding:1.4rem 1.15rem !important; }
-      .about-card h2 { font-size:1.35rem; }
-    }
-  </style>
+  <main>
+    <section class="about-hero">
+      <div class="container">
+        <div class="about-hero-grid">
+          <div>
+            <p class="eyebrow">About</p>
+            <h1>Викладач, який веде до результату, а не просто “говорить англійською”.</h1>
+            <p>Я працюю з дорослими студентами, будую заняття під ціль і люблю чіткість: у плані, фідбеку, матеріалах та правилах співпраці.</p>
+            <div class="hero-actions">
+              <a href="{% url 'services' %}" class="btn btn-brand">Подивитись послуги</a>
+              <a href="{% url 'reviews' %}" class="btn btn-quiet">Відгуки студентів</a>
+            </div>
+          </div>
+          <div class="about-portrait">
+            <img src="{% static 'assets/images/my-image-02.jpg' %}" alt="Olena Khandii">
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <section class="about-section py-5">
-    <div class="container position-relative">
-      <div class="row justify-content-center">
-        <div class="col-lg-9">
-          <div class="about-card p-4 p-md-5 fade-in">
-            <h2 style="color:#0e0af3; font-size:2.4rem; line-height:1.0;">Вам до мене, якщо…</h2>
-            <ul class="about-list">
-              <li class="mb-3 fade-in delay-1">
-                <strong>Ви шукаєте професійного викладача, а не просто людину, яка добре знає англійську.</strong><br>
-                Я маю ступінь бакалавра за спеціальністю «Англійська філологія» і Кембриджську сертифікацію CELTA (Pass A).
-              </li>
-              <li class="mb-3 fade-in delay-2">
-                Я постійно розвиваюсь і проходжу топові навчання, не для галочки і сертифіката в копілочку, а для реально якісного покращення своїх занять і результату своїх учнів.
-              </li>
-              <li class="mb-3 fade-in delay-3">
-                <strong>Якщо ви шукаєте викладача з досвідом:</strong>
-                <ul class="mt-2">
-                  <li>Я почала викладати у 18 (13 років назад) і з тих пір не зупинялась.</li>
-                  <li>Я проводила заняття навіть, коли моїй дитині було 2-3 місяці (звісно не в таких обсягах як зараз). Чому? Бо я жити без цього не можу.</li>
-                  <li>Я маю досвід викладання індивідуально і маленьким групам, студентам з України і з-за кордону. Моїй наймолодшій учениці було 5, а найстаршій 65.</li>
-                  <li>Зараз я викладаю <strong>ЛИШЕ дорослим</strong>😉.</li>
-                </ul>
-              </li>
-              <li class="mb-3 fade-in delay-4">
-                <strong>Ви шукаєте викладача, а не психолога.</strong><br>
-                Я ретельно готуюсь до уроків, в кожного уроку завжди є чітка мета, як і у всієї нашої співпраці загалом.<br>
-                За балачками впусту, точно не до мене.
-              </li>
-              <li class="mb-3 fade-in delay-4">
-                Я працюю з найкращими підручниками і автентичними матеріалами, але міксую матеріали під потреби студента і урок на одну і ту ж тему в різних студентів точно не буде ідентичним.
-              </li>
-              <li class="mb-3 fade-in delay-4">
-                <strong>Якщо ви готові працювати:</strong><br>
-                Якщо ви мій студент, я на 100% зацікавлена у вашому результаті і вестиму вас до нього. Але якщо ви сідаєте зі мною в цей човен, будьте готові гребсти разом зі мною😁 Без ваших зусиль на уроках і поза ними ми нікуди не припливемо. Се ля ві.
-              </li>
-              <li class="mb-3 fade-in delay-4">
-                <strong>Якщо ви любите чіткість і послідовність в роботі:</strong><br>
-                У нашої співпраці будуть чіткі правила, які стосуються оплати, відмін, переносів. Ніяких двозначностей. Ви ознайомлюєтесь з правилами ДО початку співпраці, і якщо ви з ними не погоджуєтесь, то я не ваш викладач.<br>
-                До речі, правила зобовʼязують не лише вас, а й мене. Я не з тих, хто відмінятиме заняття за 5 хвилин до початку. (Хіба станеться щось дійсно страшне, і то, я обов’язково компенсую!)
-              </li>
-            </ul>
+    <section class="section-strip">
+      <div class="container">
+        <div class="strip-grid">
+          <div>
+            <span class="metric">CELTA A</span>
+            <span>Cambridge certification</span>
+          </div>
+          <div>
+            <span class="metric">13+</span>
+            <span>років викладання</span>
+          </div>
+          <div>
+            <span class="metric">adults only</span>
+            <span>фокус на дорослих студентах</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <hr class="about-divider">
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">You are in the right place</p>
+          <h2>Вам до мене, якщо...</h2>
+        </div>
 
-            <h2 style="color:#0e0af3; font-size:2.4rem; line-height:1.0;">On a lighter note</h2>
-            <div class="about-paragraphs mt-3">
-              <p>Я трохи феміністичних поглядів одружена леді і мама неймовірного хлопчика 6 років. Я обожнюю свою сім’ю, вони - любов, сила і опора♥️</p>
-              <p>Всі разом ми виховуємо нашого любімого песа Кевіна, йому скоро 2, і він наш найкращий друг.</p>
-              <p>Мені 31 і я почала ходити на танці, бо мріяла про це більше 10 років, але відкладала, бо ніби вже вік не дозволяє✌🏻🤪 Але мрії потрібно здійснювати, тому я наважилась і пішла! І так кайфую☺️</p>
-              <p>Останні кілька років я поринула в роботу над собою і дуже сильно змінилась внутрішньо.</p>
-              <p>До речі, я з Чернівців😉.<br>А більше про мене як людину можна дізнатись в актуальних сторіс. Чого там тільки нема😉</p>
+        <div class="about-reasons-grid">
+          <article class="about-reason-card featured">
+            <span class="offer-index">01</span>
+            <h3>Ви шукаєте професійного викладача</h3>
+            <p>Я маю ступінь бакалавра за спеціальністю “Англійська філологія” і Кембриджську сертифікацію CELTA Pass A.</p>
+          </article>
+
+          <article class="about-reason-card">
+            <span class="offer-index">02</span>
+            <h3>Вам важливий досвід</h3>
+            <p>Я почала викладати у 18 і з того часу не зупинялась. Маю досвід індивідуальних занять і маленьких груп зі студентами з України та з-за кордону.</p>
+          </article>
+
+          <article class="about-reason-card">
+            <span class="offer-index">03</span>
+            <h3>Ви хочете уроки з метою</h3>
+            <p>Я ретельно готуюсь до занять. У кожного уроку є чітка мета, як і у всієї нашої співпраці загалом.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section soft-section">
+      <div class="container">
+        <div class="about-method-layout">
+          <div class="about-method-panel">
+            <p class="eyebrow">Teaching approach</p>
+            <h2>Я працюю з матеріалами під вашу ціль, а не за шаблоном.</h2>
+            <p>Я використовую якісні підручники й автентичні матеріали, але міксую їх під потреби конкретного студента. Урок на одну і ту ж тему в різних студентів не буде ідентичним.</p>
+          </div>
+
+          <div class="about-method-list">
+            <div class="rule-line">
+              <strong>Готовність працювати</strong>
+              <p>Якщо ви мій студент, я на 100% зацікавлена у вашому результаті і вестиму вас до нього. Але результат потребує ваших зусиль на уроках і поза ними.</p>
+            </div>
+            <div class="rule-line">
+              <strong>Чіткість і послідовність</strong>
+              <p>У нашої співпраці будуть чіткі правила щодо оплати, відмін і переносів. Ви ознайомлюєтесь з ними до початку навчання.</p>
+            </div>
+            <div class="rule-line">
+              <strong>Постійний розвиток</strong>
+              <p>Я проходжу навчання не для сертифіката в копілочку, а для реального покращення занять і результату студентів.</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="about-personal-grid">
+          <div>
+            <p class="eyebrow">On a lighter note</p>
+            <h2>Трохи про мене як людину</h2>
+          </div>
+
+          <div class="about-personal-cards">
+            <article class="about-personal-card">
+              <h3>Family</h3>
+              <p>Я одружена леді і мама неймовірного хлопчика. Я обожнюю свою сім'ю: вони любов, сила і опора.</p>
+            </article>
+            <article class="about-personal-card">
+              <h3>Life</h3>
+              <p>Мені 31 і я почала ходити на танці, бо мріяла про це більше 10 років. Мрії потрібно здійснювати.</p>
+            </article>
+            <article class="about-personal-card">
+              <h3>Chernivtsi</h3>
+              <p>Я з Чернівців. Більше про мене як людину можна дізнатись в актуальних сторіс.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-content">
+          <p class="eyebrow">Next</p>
+          <h2>Якщо підхід відгукується, оберіть формат навчання.</h2>
+          <p>Почніть із послуг, цін або правил співпраці, щоб зрозуміти, чи ми підходимо одне одному.</p>
+          <a href="{% url 'services' %}" class="btn btn-light">Перейти до послуг</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   {% include 'footer.html' %}
 
-  <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-    crossorigin="anonymous"></script>
-
-  <!-- Additional Scripts -->
   <script src="{% static 'assets/js/custom.js' %}"></script>
-  <script src="{% static 'assets/js/owl.js' %}"></script>
-  <script src="{% static 'assets/js/slick.js' %}"></script>
-  <script src="{% static 'assets/js/isotope.js' %}"></script>
-  <script src="{% static 'assets/js/accordions.js' %}"></script>
-
-  <script language="text/Javascript">
-    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-    function clearField(t) {                   //declaring the array outside of the
-      if (!cleared[t.id]) {                      // function makes it static and global
-        cleared[t.id] = 1;  // you could use true and false, but that's more typing
-        t.value = '';         // with more chance of typos
-        t.style.color = '#fff';
-      }
-    }
-  </script>
-
 </body>
 
 </html>
