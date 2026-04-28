@@ -31,16 +31,16 @@
       <div class="container">
         <div class="strip-grid">
           <div>
-            <span class="metric">B1+</span>
-            <span>для студентів від Intermediate і вище</span>
+            <span class="metric">A1-B1</span>
+            <span>перший тест для базового рівня</span>
           </div>
           <div>
-            <span class="metric">80</span>
-            <span>питань у чотирьох секціях</span>
+            <span class="metric">B1+</span>
+            <span>другий тест для Intermediate і вище</span>
           </div>
           <div>
             <span class="metric">PDF + audio</span>
-            <span>тест і listening-файл для завантаження</span>
+            <span>кожен тест має окремий listening-файл</span>
           </div>
         </div>
       </div>
@@ -52,19 +52,31 @@
           <div class="diagnostic-main">
             <div class="section-heading">
               <p class="eyebrow">About the test</p>
-              <h2>Для яких рівнів цей тест</h2>
+              <h2>Оберіть тест за вашим рівнем</h2>
             </div>
             <p>
-              PDF містить Pearson Course Placement Test 2A для дорослих у British English. За структурою і типами завдань
-              він найкраще підходить для студентів, які вже мають базу і орієнтовно знаходяться на рівні B1 або вище.
-              Тест перевіряє не лише просту граматику, а й теми, типові для B1-B2 та частково C1: present perfect
-              continuous, passive voice, conditionals, wish structures, reported speech, phrasal verbs, reading inference
-              та словник для побутових, робочих і абстрактніших тем.
+              На сторінці є два Pearson Course Placement Test для дорослих у British English. Якщо ви тільки починаєте,
+              давно не займалися або не впевнені у базі, оберіть Test 1A для A1-B1. Якщо ви вже приблизно на рівні B1
+              або вище і хочете точніше побачити сильні та слабкі місця, оберіть Test 2A для B1+.
             </p>
             <p>
-              Якщо ви не впевнені, чи ваш рівень уже B1, тест все одно можна пройти: порожні відповіді теж корисні для
-              діагностики, бо показують, де саме починається зона складності.
+              Обидва тести мають однакову структуру: listening, grammar, vocabulary та reading. Різниця в складності:
+              Test 1A перевіряє базові й середні теми, а Test 2A містить складніші граматичні конструкції, phrasal verbs
+              і тексти з більшою кількістю деталей та висновків.
             </p>
+
+            <div class="test-choice-grid">
+              <article>
+                <span class="tag">Test 1A</span>
+                <h3>A1-B1</h3>
+                <p>Для Elementary, Pre-Intermediate та студентів, які не впевнені у базі. Починайте з цього тесту, якщо є сумніви.</p>
+              </article>
+              <article>
+                <span class="tag">Test 2A</span>
+                <h3>B1+</h3>
+                <p>Для Intermediate і вище. Підійде, якщо ви вже можете говорити на знайомі теми, але хочете точніше визначити рівень.</p>
+              </article>
+            </div>
 
             <div class="test-section-grid">
               <article>
@@ -75,12 +87,12 @@
               <article>
                 <span>02</span>
                 <h3>Grammar</h3>
-                <p>30 питань на граматичні структури від Intermediate до Upper-Intermediate/Advanced.</p>
+                <p>30 питань. У Test 1A теми простіші, у Test 2A більше Intermediate та Upper-Intermediate структур.</p>
               </article>
               <article>
                 <span>03</span>
                 <h3>Vocabulary</h3>
-                <p>20 питань на лексику, сталі вирази, phrasal verbs і точність вибору слова.</p>
+                <p>20 питань на лексику, сталі вирази й точність вибору слова.</p>
               </article>
               <article>
                 <span>04</span>
@@ -93,29 +105,66 @@
           <aside class="download-panel">
             <p class="eyebrow">Files</p>
             <h2>Завантажте матеріали</h2>
-            <p>Для виконання потрібні PDF із тестом та MP3 для listening-секції.</p>
+            <p>Завантажте PDF і MP3 саме для того тесту, який обрали.</p>
 
-            <a class="download-card" href="{% static 'assets/files/diagnostic-test-b1-plus.pdf' %}" download>
-              <span>PDF</span>
-              <div>
-                <strong>Diagnostic test B1+</strong>
-                <small>тест, завдання та answer sheet</small>
+            <div class="download-group">
+              <div class="download-level">
+                <span>Test 1A</span>
+                <strong>A1-B1</strong>
               </div>
-            </a>
 
-            <a class="download-card" href="{% static 'assets/files/diagnostic-test-listening-b1-plus.mp3' %}" download>
-              <span>MP3</span>
-              <div>
-                <strong>Listening audio</strong>
-                <small>аудіо до першої секції</small>
+              <a class="download-card" href="{% static 'assets/files/diagnostic-test-a1-b1.pdf' %}" download>
+                <span>PDF</span>
+                <div>
+                  <strong>Diagnostic test A1-B1</strong>
+                  <small>тест, завдання та answer sheet</small>
+                </div>
+              </a>
+
+              <a class="download-card" href="{% static 'assets/files/diagnostic-test-listening-a1-b1.mp3' %}" download>
+                <span>MP3</span>
+                <div>
+                  <strong>Listening audio A1-B1</strong>
+                  <small>аудіо до Test 1A</small>
+                </div>
+              </a>
+
+              <div class="audio-preview">
+                <span>Прослухати Test 1A:</span>
+                <audio controls preload="none">
+                  <source src="{% static 'assets/files/diagnostic-test-listening-a1-b1.mp3' %}" type="audio/mpeg">
+                </audio>
               </div>
-            </a>
+            </div>
 
-            <div class="audio-preview">
-              <span>Можна прослухати тут:</span>
-              <audio controls preload="none">
-                <source src="{% static 'assets/files/diagnostic-test-listening-b1-plus.mp3' %}" type="audio/mpeg">
-              </audio>
+            <div class="download-group">
+              <div class="download-level">
+                <span>Test 2A</span>
+                <strong>B1+</strong>
+              </div>
+
+              <a class="download-card" href="{% static 'assets/files/diagnostic-test-b1-plus.pdf' %}" download>
+                <span>PDF</span>
+                <div>
+                  <strong>Diagnostic test B1+</strong>
+                  <small>тест, завдання та answer sheet</small>
+                </div>
+              </a>
+
+              <a class="download-card" href="{% static 'assets/files/diagnostic-test-listening-b1-plus.mp3' %}" download>
+                <span>MP3</span>
+                <div>
+                  <strong>Listening audio B1+</strong>
+                  <small>аудіо до Test 2A</small>
+                </div>
+              </a>
+
+              <div class="audio-preview">
+                <span>Прослухати Test 2A:</span>
+                <audio controls preload="none">
+                  <source src="{% static 'assets/files/diagnostic-test-listening-b1-plus.mp3' %}" type="audio/mpeg">
+                </audio>
+              </div>
             </div>
           </aside>
         </div>

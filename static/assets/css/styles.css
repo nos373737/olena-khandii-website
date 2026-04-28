@@ -783,7 +783,15 @@ img {
   margin-top: 30px;
 }
 
+.test-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
 .test-section-grid article,
+.test-choice-grid article,
 .download-panel,
 .instruction-panel,
 .submission-panel {
@@ -793,6 +801,7 @@ img {
 }
 
 .test-section-grid article,
+.test-choice-grid article,
 .download-panel,
 .instruction-panel,
 .submission-panel {
@@ -819,9 +828,43 @@ img {
   margin: 10px 0 12px;
 }
 
+.test-choice-grid h3 {
+  color: var(--ink);
+  font-size: 34px;
+  font-weight: 900;
+  line-height: 1;
+  margin: 16px 0 12px;
+}
+
 .download-panel {
   position: sticky;
   top: 104px;
+}
+
+.download-group {
+  border-top: 1px solid var(--line);
+  margin-top: 24px;
+  padding-top: 22px;
+}
+
+.download-level {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.download-level span {
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.download-level strong {
+  color: var(--ink);
+  font-size: 22px;
+  font-weight: 900;
 }
 
 .download-card {
@@ -872,9 +915,7 @@ img {
 }
 
 .audio-preview {
-  border-top: 1px solid var(--line);
   margin-top: 22px;
-  padding-top: 20px;
 }
 
 .audio-preview audio {
@@ -1502,6 +1543,7 @@ img {
   .about-method-list,
   .about-personal-card,
   .test-section-grid article,
+  .test-choice-grid article,
   .download-panel,
   .instruction-panel,
   .submission-panel,
@@ -1509,7 +1551,8 @@ img {
     padding: 22px;
   }
 
-  .test-section-grid {
+  .test-section-grid,
+  .test-choice-grid {
     grid-template-columns: 1fr;
   }
 
