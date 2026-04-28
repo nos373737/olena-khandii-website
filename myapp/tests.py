@@ -1,4 +1,6 @@
-from django.test import TestCase, Client
+from django.core import mail
+from django.core.files.uploadedfile import SimpleUploadedFile
+from django.test import Client, TestCase, override_settings
 from django.contrib.auth.models import User
 from .models import Post, Category, Comment, Contact
 
@@ -108,3 +110,39 @@ class ViewsTest(TestCase):
         )
         self.assertEqual(response.status_code, 302)  # Redirect after creation
         self.assertTrue(Post.objects.filter(postname="New Post").exists())
+
+
+@override_settings(EMAIL_BACKEND="django.core.mail.backends.locmem.EmailBackend")
+class ContactRequestViewTest(TestCase):
+    def test_contact_request_sends_uploaded_answer_file(self):
+        answer_file = SimpleUploadedFile(
+            "answers.pdf",
+            b"test answers",
+            content_type="application/pdf",
+        )
+
+        response = self.client.post(
+            "/contact",
+            {
+                "name": "Student",
+                "email": "student@example.com",
+                "messenger": "@student",
+                "message": "I want to improve speaking.",
+                "answer_files": answer_file,
+            },
+        )
+
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Відповіді надіслано")
+        self.assertTrue(Contact.objects.filter(email="student@example.com").exists())
+        self.assertEqual(len(mail.outbox), 1)
+        self.assertEqual(mail.outbox[0].attachments[0][0], "answers.pdf")
+
+
+class ReviewsRedirectTest(TestCase):
+    @override_settings(INSTAGRAM_REVIEWS_URL="https://www.instagram.com/olena_khandii/")
+    def test_reviews_redirects_to_instagram(self):
+        response = self.client.get("/reviews")
+
+        self.assertEqual(response.status_code, 302)
+        self.assertEqual(response["Location"], "https://www.instagram.com/olena_khandii/")

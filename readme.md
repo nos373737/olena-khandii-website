@@ -101,12 +101,43 @@ Starts Gunicorn in the background and writes output to `gunicorn.log`.
 3. Use the public blog page to validate how posts appear.
 4. Keep service, pricing, rules, and review pages updated as the business offer changes.
 
+## Learning Request Form
+
+The header button `Запит на навчання` opens `/contact`.
+
+This page now contains:
+
+- a B1+ diagnostic placement test description
+- downloadable PDF test file
+- downloadable MP3 listening file
+- upload form for completed answers
+
+Uploaded answers are attached to an email and sent to `DJANGO_TEACHER_EMAIL`.
+
+Local development uses Django's console email backend by default. For production email delivery, configure SMTP in `/etc/olena-khandii.env`:
+
+```bash
+DJANGO_TEACHER_EMAIL=olenakhandii@gmail.com
+DJANGO_DEFAULT_FROM_EMAIL=website@olenakhandii.com
+DJANGO_EMAIL_HOST=smtp.example.com
+DJANGO_EMAIL_PORT=587
+DJANGO_EMAIL_HOST_USER=your-smtp-user
+DJANGO_EMAIL_HOST_PASSWORD=your-smtp-password
+DJANGO_EMAIL_USE_TLS=True
+```
+
+Then restart the service:
+
+```bash
+sudo systemctl restart olena-khandii
+```
+
 ## Frontend Direction
 
 The current design is built around a personal teacher brand rather than a generic blog template:
 
 - clear hero with Olena as the first-viewport signal
-- direct paths to services, prices, reviews, and blog
+- direct paths to services, prices, blog, and real Instagram reviews
 - modern editorial blog cards with image fallbacks
 - placeholders that make future newsletter or paid content features straightforward
 

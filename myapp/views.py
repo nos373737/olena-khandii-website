@@ -4,6 +4,7 @@ from django.contrib.auth import authenticate
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
+from django.core.mail import EmailMessage
 from .models import *
 
 from .models import Comment,Post
@@ -175,16 +176,72 @@ def deletepost(request,id):
 
 
 def contact_us(request):
-    context={}
+    context = {}
     if request.method == 'POST':
-        name=request.POST.get('name')    
-        email=request.POST.get('email')  
-        subject=request.POST.get('subject')  
-        message=request.POST.get('message')  
+        name = request.POST.get('name', '').strip()
+        email = request.POST.get('email', '').strip()
+        messenger = request.POST.get('messenger', '').strip()
+        message = request.POST.get('message', '').strip()
+        answer_files = request.FILES.getlist("answer_files")
 
-        obj = Contact(name=name,email=email,subject=subject,message=message)
-        obj.save()
-        context['message']=f"Dear {name}, Thanks for your time!"
+        allowed_extensions = {".pdf", ".jpg", ".jpeg", ".png", ".heic", ".doc", ".docx"}
+        total_size = sum(upload.size for upload in answer_files)
+        errors = []
+
+        if not answer_files:
+            errors.append("Додайте файл з відповідями: фото, скріншот, PDF або документ.")
+
+        for upload in answer_files:
+            file_name = upload.name.lower()
+            if not any(file_name.endswith(extension) for extension in allowed_extensions):
+                errors.append(f"Файл {upload.name} має непідтримуваний формат.")
+            if upload.size > settings.CONTACT_UPLOAD_MAX_SIZE:
+                errors.append(f"Файл {upload.name} більший за дозволений розмір.")
+
+        if total_size > settings.CONTACT_UPLOAD_MAX_TOTAL_SIZE:
+            errors.append("Загальний розмір файлів завеликий. Спробуйте надіслати менше файлів або стиснути фото.")
+
+        if errors:
+            context["errors"] = errors
+            context["form_data"] = request.POST
+        else:
+            subject = "Запит на навчання: діагностичний тест"
+            file_names = ", ".join(upload.name for upload in answer_files)
+            saved_message = (
+                f"Instagram або Telegram: {messenger or 'не вказано'}\n\n"
+                f"Повідомлення:\n{message or 'не вказано'}\n\n"
+                f"Файли з відповідями: {file_names}"
+            )
+
+            Contact(name=name, email=email, subject=subject, message=saved_message).save()
+
+            email_message = EmailMessage(
+                subject=f"[Olena Khandii] {subject}",
+                body=(
+                    "Новий запит на навчання після діагностичного тесту.\n\n"
+                    f"Ім'я: {name}\n"
+                    f"Email: {email}\n"
+                    f"Instagram або Telegram: {messenger or 'не вказано'}\n\n"
+                    f"Повідомлення:\n{message or 'не вказано'}\n\n"
+                    f"Файли: {file_names}"
+                ),
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[settings.TEACHER_EMAIL],
+                reply_to=[email] if email else None,
+            )
+
+            for upload in answer_files:
+                email_message.attach(upload.name, upload.read(), upload.content_type)
+
+            try:
+                email_message.send(fail_silently=False)
+                context["success_message"] = (
+                    "Дякую! Відповіді надіслано. Я перегляну тест і напишу вам щодо наступного кроку."
+                )
+            except Exception:
+                context["errors"] = [
+                    "Заявку збережено, але лист не вдалося надіслати. Будь ласка, напишіть напряму на email викладача."
+                ]
 
     return render(request,"contact.html", context)
 
@@ -204,4 +261,4 @@ def aboutme(request):
     return render(request,"about.html",{})
 
 def reviews(request):
-    return render(request,"reviews.html",{})
+    return redirect(settings.INSTAGRAM_REVIEWS_URL)

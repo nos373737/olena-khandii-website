@@ -1,188 +1,193 @@
 {% load static %}
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <link
-    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap"
-    rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-
-  <!-- Bootstrap core CSS -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Діагностичний тест перед записом на навчання з Olena Khandii. Завантажте PDF і аудіо, виконайте тест та надішліть відповіді.">
+  <title>Запит на навчання | Olena Khandii</title>
   <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-
-  <!-- Additional CSS Files -->
   <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
   <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
-  <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
-
-  <title>Contact</title>
-
-
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon-16x16.png' %}">
 </head>
 
 <body>
+  {% include 'header.html' %}
 
- 
-
-
-  <!-- Header -->
-  {%include 'header.html'%}
-
-  <!-- Page Content -->
-  <!-- Banner Starts Here -->
-  <div class="heading-page header-text">
-    <section class="page-heading">
+  <main>
+    <section class="page-hero compact">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <div class="text-content">
-              <h4>contact us</h4>
-              <h2>let's stay in touch!</h2>
-            </div>
+        <p class="eyebrow">Placement test</p>
+        <h1>Діагностичний тест перед записом на навчання</h1>
+        <p>Цей тест допомагає точніше визначити ваш поточний рівень і зрозуміти, з чого краще почати роботу.</p>
+      </div>
+    </section>
+
+    <section class="section-strip">
+      <div class="container">
+        <div class="strip-grid">
+          <div>
+            <span class="metric">B1+</span>
+            <span>для студентів від Intermediate і вище</span>
+          </div>
+          <div>
+            <span class="metric">80</span>
+            <span>питань у чотирьох секціях</span>
+          </div>
+          <div>
+            <span class="metric">PDF + audio</span>
+            <span>тест і listening-файл для завантаження</span>
           </div>
         </div>
       </div>
     </section>
-  </div>
 
-  <!-- Banner Ends Here -->
-
-  {% if message %}
-  <script>
-      alert('{{message}}');
-  </script>
-  {% endif %}
-
-
-  <section class="contact-us">
-    <div class="container">
-      <div class="row">
-
-        <div class="col-lg-12">
-          <div class="down-contact">
-            <div class="row">
-              <div class="col-lg-8">
-                <div class="sidebar-item contact-form">
-                  <div class="sidebar-heading">
-                    <h2 class="h2">Send us a message</h2>
-                  </div>
-                  <div class="content">
-                    <form id="contact" method="post" action="{% url 'contact' %}">
-                      {% csrf_token %}
-                      <div class="row">
-                        <div class="col-md-6 col-sm-12">
-                          <fieldset>
-                            <input name="name" type="text" id="name" placeholder="Name" required>
-                          </fieldset>
-                        </div>
-                        <div class="col-md-6 col-sm-12">
-                          <fieldset>
-                            <input name="email" type="email" id="email" placeholder="Email" required>
-                          </fieldset>
-                        </div>
-                        <div class="col-md-12 col-sm-12">
-                          <fieldset>
-                            <input name="subject" type="text" id="subject" placeholder="Subject">
-                          </fieldset>
-                        </div>
-                        <div class="col-lg-12">
-                          <fieldset>
-                            <textarea name="message" rows="6" id="message" placeholder="Message"
-                              required=""></textarea>
-                          </fieldset>
-                        </div>
-                        <div class="col-lg-12">
-                          <fieldset>
-                            <center>
-                              <button type="submit" id="form-submit" class="main-button">Send Message</button>
-                            </center>
-                          </fieldset>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-
-                  {% for message in messages %}
-                  <p class="text-danger">{{message}}</p>
-                  {% endfor %}
-
-                </div>
-              </div>
-              <div class="col-lg-4">
-                <div class="sidebar-item contact-information">
-                  <div class="sidebar-heading">
-                    <h2>contact information</h2>
-                  </div>
-                  <div class="content">
-                    <ul>
-                      <li>
-                        <h5 style="font-weight:400">+38 1111111</h5>
-                        <span>PHONE NUMBER</span>
-                      </li>
-                      <li>
-                        <h5 style="font-weight:400">olenakhandii@gmail.com</h5>
-                        <span>EMAIL ADDRESS</span>
-                      </li>
-                      <li>
-                        <h5 style="font-weight:400">Chernivtsi, Ukraine</h5>
-                        </h5>
-                        <span>STREET ADDRESS</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+    <section class="content-section">
+      <div class="container">
+        <div class="diagnostic-layout">
+          <div class="diagnostic-main">
+            <div class="section-heading">
+              <p class="eyebrow">About the test</p>
+              <h2>Для яких рівнів цей тест</h2>
             </div>
+            <p>
+              PDF містить Pearson Course Placement Test 2A для дорослих у British English. За структурою і типами завдань
+              він найкраще підходить для студентів, які вже мають базу і орієнтовно знаходяться на рівні B1 або вище.
+              Тест перевіряє не лише просту граматику, а й теми, типові для B1-B2 та частково C1: present perfect
+              continuous, passive voice, conditionals, wish structures, reported speech, phrasal verbs, reading inference
+              та словник для побутових, робочих і абстрактніших тем.
+            </p>
+            <p>
+              Якщо ви не впевнені, чи ваш рівень уже B1, тест все одно можна пройти: порожні відповіді теж корисні для
+              діагностики, бо показують, де саме починається зона складності.
+            </p>
+
+            <div class="test-section-grid">
+              <article>
+                <span>01</span>
+                <h3>Listening</h3>
+                <p>5 записів, 20 питань. Аудіо прослуховується один раз, як у реальному форматі placement test.</p>
+              </article>
+              <article>
+                <span>02</span>
+                <h3>Grammar</h3>
+                <p>30 питань на граматичні структури від Intermediate до Upper-Intermediate/Advanced.</p>
+              </article>
+              <article>
+                <span>03</span>
+                <h3>Vocabulary</h3>
+                <p>20 питань на лексику, сталі вирази, phrasal verbs і точність вибору слова.</p>
+              </article>
+              <article>
+                <span>04</span>
+                <h3>Reading</h3>
+                <p>3 тексти та 10 питань на розуміння деталей, змісту й висновків із тексту.</p>
+              </article>
+            </div>
+          </div>
+
+          <aside class="download-panel">
+            <p class="eyebrow">Files</p>
+            <h2>Завантажте матеріали</h2>
+            <p>Для виконання потрібні PDF із тестом та MP3 для listening-секції.</p>
+
+            <a class="download-card" href="{% static 'assets/files/diagnostic-test-b1-plus.pdf' %}" download>
+              <span>PDF</span>
+              <div>
+                <strong>Diagnostic test B1+</strong>
+                <small>тест, завдання та answer sheet</small>
+              </div>
+            </a>
+
+            <a class="download-card" href="{% static 'assets/files/diagnostic-test-listening-b1-plus.mp3' %}" download>
+              <span>MP3</span>
+              <div>
+                <strong>Listening audio</strong>
+                <small>аудіо до першої секції</small>
+              </div>
+            </a>
+
+            <div class="audio-preview">
+              <span>Можна прослухати тут:</span>
+              <audio controls preload="none">
+                <source src="{% static 'assets/files/diagnostic-test-listening-b1-plus.mp3' %}" type="audio/mpeg">
+              </audio>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section soft-section">
+      <div class="container">
+        <div class="diagnostic-layout reverse">
+          <div class="instruction-panel">
+            <p class="eyebrow">How to complete</p>
+            <h2>Як виконати тест</h2>
+            <ul class="clean-list">
+              <li>Для більш точного результату обирайте тільки ті відповіді, у яких ви впевнені.</li>
+              <li>Якщо хочеться просто вгадати, краще залиште відповідь порожньою.</li>
+              <li>Відповіді можна обвести на скріншотах, роздрукувати й сфотографувати, або редагувати прямо PDF.</li>
+              <li>Будь-який зручний формат підходить: фото, скріншоти, PDF або документ.</li>
+            </ul>
+          </div>
+
+          <div class="submission-panel">
+            <p class="eyebrow">Send answers</p>
+            <h2>Надішліть відповіді</h2>
+
+            {% if success_message %}
+            <div class="form-notice success">{{ success_message }}</div>
+            {% endif %}
+
+            {% if errors %}
+            <div class="form-notice error">
+              {% for error in errors %}
+              <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+            {% endif %}
+
+            <form class="diagnostic-form" method="post" action="{% url 'contact' %}" enctype="multipart/form-data">
+              {% csrf_token %}
+              <label for="name">Ім'я</label>
+              <input name="name" type="text" id="name" value="{{ form_data.name }}" required>
+
+              <label for="email">Email</label>
+              <input name="email" type="email" id="email" value="{{ form_data.email }}" required>
+
+              <label for="messenger">Instagram або Telegram</label>
+              <input name="messenger" type="text" id="messenger" value="{{ form_data.messenger }}" placeholder="@username в Instagram або Telegram">
+
+              <label for="message">Коротко про вашу ціль</label>
+              <textarea name="message" id="message" rows="5" placeholder="Наприклад: хочу підготуватися до співбесіди, підтягнути speaking, скласти IELTS...">{{ form_data.message }}</textarea>
+
+              <label for="answer_files">Файли з відповідями</label>
+              <input name="answer_files" type="file" id="answer_files" multiple required accept=".pdf,.jpg,.jpeg,.png,.heic,.doc,.docx">
+              <small>Підходять PDF, фото, скріншоти або документи. Максимум 10 MB на файл.</small>
+
+              <button type="submit" class="btn btn-brand">Надіслати відповіді</button>
+            </form>
+
+            <p class="telegram-note">
+              Або надішліть відповіді напряму викладачу в Telegram:
+              <a href="https://t.me/olena_khandii" target="_blank" rel="noopener">@olena_khandii</a>
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
+  {% include 'footer.html' %}
 
-  {%include 'footer.html'%}
-
-  <!-- Bootstrap core JavaScript -->
   <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
   <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-    integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
-    crossorigin="anonymous"></script>
-
-  <!-- Additional Scripts -->
   <script src="{% static 'assets/js/custom.js' %}"></script>
-  <script src="{% static 'assets/js/owl.js' %}"></script>
-  <script src="{% static 'assets/js/slick.js' %}"></script>
-  <script src="{% static 'assets/js/isotope.js' %}"></script>
-  <script src="{% static 'assets/js/accordions.js' %}"></script>
-
-
-  <script language="text/Javascript">
-    cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
-    function clearField(t) {                   //declaring the array outside of the
-      if (!cleared[t.id]) {                      // function makes it static and global
-        cleared[t.id] = 1;  // you could use true and false, but that's more typing
-        t.value = '';         // with more chance of typos
-        t.style.color = '#fff';
-      }
-    }
-
-  </script>
-
 </body>
 
 </html>

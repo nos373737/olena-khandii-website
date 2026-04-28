@@ -70,11 +70,24 @@ write_files:
         umask 077
         {
           echo "DJANGO_DEBUG=False"
+          echo "DJANGO_TEACHER_EMAIL=olenakhandii@gmail.com"
+          echo "DJANGO_DEFAULT_FROM_EMAIL=website@olenakhandii.com"
           echo "DJANGO_ALLOWED_HOSTS=olenakhandii.com,www.olenakhandii.com,136.244.84.166,localhost,127.0.0.1"
           printf "DJANGO_SECRET_KEY="
           python3 -c "from secrets import token_urlsafe; print(token_urlsafe(50))"
         } > "${ENV_FILE}"
       fi
+
+      ensure_env_var() {
+        key="$1"
+        value="$2"
+        if ! grep -q "^${key}=" "${ENV_FILE}"; then
+          echo "${key}=${value}" >> "${ENV_FILE}"
+        fi
+      }
+
+      ensure_env_var "DJANGO_TEACHER_EMAIL" "olenakhandii@gmail.com"
+      ensure_env_var "DJANGO_DEFAULT_FROM_EMAIL" "website@olenakhandii.com"
 
       set -a
       # shellcheck disable=SC1090
