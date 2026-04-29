@@ -104,6 +104,21 @@ img {
   color: #fff !important;
 }
 
+.btn-level {
+  border: 1px solid #14a66a;
+  background: #14a66a;
+  color: #fff !important;
+  box-shadow: 0 14px 30px rgba(20, 166, 106, .2);
+  white-space: normal;
+  text-align: center;
+}
+
+.btn-level:hover {
+  border-color: #0d7d4f;
+  background: #0d7d4f;
+  color: #fff !important;
+}
+
 .btn-quiet {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, .74);
@@ -246,6 +261,10 @@ img {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 18px;
+}
+
+.offer-grid.two-up {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .offer-card,
