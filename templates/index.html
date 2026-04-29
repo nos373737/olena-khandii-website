@@ -80,46 +80,6 @@
         </div>
       </div>
     </section>
-
-    <section class="content-section blog-preview-section">
-      <div class="container">
-        <div class="section-heading section-heading-row">
-          <div>
-            <p class="eyebrow">Blog</p>
-            <h2>Свіжі нотатки</h2>
-          </div>
-          <a href="{% url 'blog' %}" class="text-link">Усі пости</a>
-        </div>
-
-        <div class="post-card-grid">
-          {% for post in recent_posts|slice:"0:3" %}
-          <article class="post-card">
-            <a href="{% url 'post' post.id %}" class="post-image-link">
-              {% if post.image %}
-              <img src="{{ post.image.url }}" alt="{{ post.postname }}">
-              {% else %}
-              <img src="{% static 'assets/images/education.jpg' %}" alt="{{ post.postname }}">
-              {% endif %}
-            </a>
-            <div class="post-card-body">
-              <span class="tag">{{ post.category.name }}</span>
-              <h3><a href="{% url 'post' post.id %}">{{ post.postname }}</a></h3>
-              <p>{{ post.content|striptags|truncatechars:150 }}</p>
-              <div class="post-meta">
-                <span>{{ post.time }}</span>
-                <span>{{ post.likes }} likes</span>
-              </div>
-            </div>
-          </article>
-          {% empty %}
-          <div class="empty-state">
-            <h3>Блог готовий до першої публікації.</h3>
-            <p>Коли з'являться записи, вони автоматично підтягнуться сюди.</p>
-          </div>
-          {% endfor %}
-        </div>
-      </div>
-    </section>
   </main>
 
   {% include 'footer.html' %}

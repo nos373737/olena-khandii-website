@@ -104,6 +104,7 @@ class ViewsTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "free-materials.html")
         self.assertContains(response, "Безкоштовні матеріали")
+        self.assertContains(response, "free-english-guide.pdf")
         self.assertContains(response, "Home Alone")
         self.assertContains(response, "Bridgerton 1-4")
         self.assertContains(response, "Everyday Words")
