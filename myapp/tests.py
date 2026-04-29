@@ -98,6 +98,23 @@ class ViewsTest(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "create.html")
 
+    def test_free_materials_view(self):
+        response = self.client.get("/free-materials")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "free-materials.html")
+        self.assertContains(response, "Безкоштовні матеріали")
+        self.assertContains(response, "Home Alone")
+        self.assertContains(response, "Bridgerton 1-4")
+        self.assertContains(response, "Everyday Words")
+
+    def test_schedule_view(self):
+        response = self.client.get("/schedule")
+
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "schedule.html")
+        self.assertContains(response, "Графік роботи")
+
     def test_post_creation(self):
         self.client.login(username="testuser", password="password")
         response = self.client.post(

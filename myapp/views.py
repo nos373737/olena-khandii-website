@@ -257,6 +257,12 @@ def prices(request):
 def rules(request):
     return render(request,"rules.html",{})
 
+def free_materials(request):
+    return render(request,"free-materials.html",{})
+
+def schedule(request):
+    return render(request,"schedule.html",{})
+
 def aboutme(request):
     return render(request,"about.html",{})
 

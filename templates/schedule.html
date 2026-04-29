@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Графік роботи Olena Khandii: як бронюються заняття, коли підтверджується слот і що потрібно зробити перед стартом.">
+  <title>Графік роботи | Olena Khandii</title>
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/templatemo-stand-blog.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'assets/images/favicon-32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'assets/images/favicon-16x16.png' %}">
+</head>
+
+<body>
+  {% include 'header.html' %}
+
+  <main>
+    <section class="page-hero compact">
+      <div class="container">
+        <p class="eyebrow">Schedule</p>
+        <h1>Графік роботи та бронювання занять</h1>
+        <p>Робочі години: понеділок-четвер 09:00-18:00, п'ятниця 09:00-12:00. Точний слот узгоджується після діагностики рівня та короткого запиту.</p>
+      </div>
+    </section>
+
+    <section class="section-strip">
+      <div class="container">
+        <div class="strip-grid">
+          <div>
+            <span class="metric">Пн-Чт</span>
+            <span>09:00-18:00</span>
+          </div>
+          <div>
+            <span class="metric">Пт</span>
+            <span>09:00-12:00</span>
+          </div>
+          <div>
+            <span class="metric">Urgent</span>
+            <span>поза графіком лише співбесіди</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">How it works</p>
+          <h2>Як формується графік</h2>
+        </div>
+
+        <div class="schedule-grid">
+          <article class="schedule-card featured">
+            <span class="offer-index">01</span>
+            <h3>Спочатку визначаємо рівень</h3>
+            <p>Ви проходите діагностичний тест і надсилаєте відповіді. Після цього легше зрозуміти формат, темп і реалістичний старт.</p>
+          </article>
+
+          <article class="schedule-card">
+            <span class="offer-index">02</span>
+            <h3>Узгоджуємо формат</h3>
+            <p>Індивідуальні, парні та групові заняття мають різну логіку графіка. Для груп важлива сумісність рівня, цілі та часу.</p>
+          </article>
+
+          <article class="schedule-card">
+            <span class="offer-index">03</span>
+            <h3>Фіксуємо стабільний слот</h3>
+            <p>Після погодження часу слот закріплюється за студентом або групою відповідно до правил оплати та переносів.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section soft-section">
+      <div class="container">
+        <div class="schedule-layout">
+          <div class="schedule-panel">
+            <p class="eyebrow">Availability</p>
+            <h2>Актуальні вільні години</h2>
+            <p>Основний робочий графік: понеділок-четвер 09:00-18:00, п'ятниця 09:00-12:00. Список відкритих слотів змінюється, тому його краще уточнювати напряму.</p>
+            <ul class="clean-list">
+              <li>Для індивідуальних занять час узгоджується персонально.</li>
+              <li>Для парних і групових занять слот підбирається під усіх учасників.</li>
+              <li>У неробочий час беру лише термінову підготовку до співбесіди.</li>
+              <li>Регулярність важлива: стабільний час допомагає тримати темп і результат.</li>
+            </ul>
+          </div>
+
+          <aside class="schedule-panel dark">
+            <p class="eyebrow">Before booking</p>
+            <h2>Перед записом</h2>
+            <p>Перегляньте ціни та правила співпраці, щоб одразу розуміти умови оплати, переносів і скасувань.</p>
+            <div class="schedule-links">
+              <a href="{% url 'prices' %}">Ціни</a>
+              <a href="{% url 'rules' %}">Правила</a>
+              <a href="{% url 'free_materials' %}">Безкоштовні матеріали</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <div class="cta-content">
+          <p class="eyebrow">Booking</p>
+          <h2>Щоб записатися, почніть із тесту.</h2>
+          <p>Після відповідей на діагностичний тест можна точніше підібрати формат і доступний слот.</p>
+          <a href="{% url 'contact' %}" class="btn btn-light">Визначити рівень і записатись</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  {% include 'footer.html' %}
+
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+</body>
+
+</html>
