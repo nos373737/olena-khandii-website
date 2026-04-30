@@ -129,6 +129,10 @@ img {
   color: #fff !important;
 }
 
+.floating-level-cta {
+  display: none;
+}
+
 .btn-quiet {
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, .74);
@@ -1598,6 +1602,10 @@ img {
 }
 
 @media (max-width: 991.98px) {
+  body {
+    padding-bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+
   .site-header .navbar-collapse {
     border-top: 1px solid var(--line);
     margin-top: 14px;
@@ -1621,6 +1629,33 @@ img {
     display: block;
     width: min(100%, 240px);
     margin: 0 auto;
+  }
+
+  .floating-level-cta {
+    position: fixed;
+    right: 16px;
+    bottom: calc(14px + env(safe-area-inset-bottom));
+    left: 16px;
+    z-index: 1100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    border: 1px solid #14a66a;
+    border-radius: 8px;
+    background: #14a66a;
+    color: #fff !important;
+    font-weight: 900;
+    line-height: 1.2;
+    padding: 12px 16px;
+    text-align: center;
+    box-shadow: 0 18px 40px rgba(20, 166, 106, .32);
+  }
+
+  .floating-level-cta:hover {
+    border-color: #0d7d4f;
+    background: #0d7d4f;
+    color: #fff !important;
   }
 
   .home-hero {
